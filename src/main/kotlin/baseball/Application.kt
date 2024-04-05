@@ -1,5 +1,8 @@
 package racingcar
 
+import baseball.domain.player.Game
+
 fun main() {
-    // TODO: 프로그램 구현
+    val game = Game()
+    game.playGame()
 }

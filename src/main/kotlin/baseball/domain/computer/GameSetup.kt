@@ -5,7 +5,7 @@ import baseball.domain.computer.Computer.Companion.MIN_RANDOM_NUMBER
 
 class GameSetup {
 
-    fun generateRandomNumber() {
+    fun generateRandomNumber(): MutableList<Int> {
         val computer = Computer()
 
         repeat(3) {
@@ -14,5 +14,7 @@ class GameSetup {
                 computer.number.add(randomNumber)
             }
         }
+
+        return computer.number
     }
 }
