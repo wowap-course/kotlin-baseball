@@ -1,9 +1,11 @@
 package baseball.domain.player
 
 import baseball.domain.computer.GameSetup
+import baseball.view.InputView
 
 class Game {
     private val gameSetup = GameSetup()
+    private val inputview = InputView()
 
     fun playGame() {
         val computer = gameSetup.generateRandomNumber()
@@ -31,7 +33,7 @@ class Game {
     private fun selectNumber(): List<Int> {
         val inputNumber = mutableListOf<Int>()
 
-        print("숫자를 입력하세요: ")
+        inputview.printInputNumber()
         val input = readlnOrNull() ?: ""
         val numbers = input.map { it.toString().toIntOrNull() }
 
