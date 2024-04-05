@@ -2,10 +2,12 @@ package baseball.domain.player
 
 import baseball.domain.computer.GameSetup
 import baseball.view.InputView
+import baseball.view.OutputView
 
 class Game {
     private val gameSetup = GameSetup()
     private val inputview = InputView()
+    private val outputview = OutputView()
 
     fun playGame() {
         val computer = gameSetup.generateRandomNumber()
@@ -24,12 +26,8 @@ class Game {
                 }
             }
 
-            when {
-                strike > 0 && ball > 0 -> println("$strike 스트라이크 $ball 볼")
-                strike > 0 -> println("$strike 스트라이크")
-                ball > 0 -> println("$ball 볼")
-                else -> println("낫딩")
-            }
+            outputview.printGameResult(strike, ball)
+
             if (strike != 3) {
                 strike = 0
                 ball = 0
