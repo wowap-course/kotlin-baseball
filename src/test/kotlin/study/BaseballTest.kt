@@ -21,4 +21,15 @@ class BaseballTest {
         println(computer.number)
 
     }
+
+    @Test
+    fun `플레이어는 랜덤한 숫자 3개를 선택한다`() {
+        val input = mutableListOf<Int>()
+
+        input.add(7)
+        input.add(8)
+        input.add(9)
+
+        println(input)
+    }
 }
