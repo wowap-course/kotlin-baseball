@@ -33,6 +33,8 @@ class Game {
                 ball = 0
             }
         }
+
+        outputview.printWin()
     }
 
     private fun selectNumber(): List<Int> {
