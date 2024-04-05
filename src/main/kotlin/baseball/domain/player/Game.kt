@@ -31,13 +31,18 @@ class Game {
     private fun selectNumber(): List<Int> {
         val inputNumber = mutableListOf<Int>()
 
-        repeat(3) {
-            val input = readln().toIntOrNull()
-            if (input != null) {
-                inputNumber.add(input)
+        print("숫자를 입력하세요: ")
+        val input = readlnOrNull() ?: ""
+        val numbers = input.map { it.toString().toIntOrNull() }
+
+        for (num in numbers) {
+            if (num != null) {
+                inputNumber.add(num)
             }
         }
 
         return inputNumber
     }
+
+
 }
