@@ -1,6 +1,9 @@
 package baseball.domain.player
 
+import baseball.domain.computer.Computer.Companion.RESET_NUMBER
+import baseball.domain.computer.Computer.Companion.THREE_STRIKE
 import baseball.domain.computer.GameSetup
+import baseball.domain.computer.Referee
 import baseball.view.InputView
 import baseball.view.OutputView
 
@@ -8,30 +11,20 @@ class Game {
     private val gameSetup = GameSetup()
     private val inputview = InputView()
     private val outputview = OutputView()
+    private val referee = Referee()
+
 
     fun playGame() {
         val computer = gameSetup.generateRandomNumber()
 
-        var strike = 0
-        var ball = 0
-
-        while (!isTreeStrike(strike)) {
+        while (!isThreeStrike(referee.strike)) {
             val player =  selectNumber()
 
-            for (i in computer.indices) {
-                if (computer[i] == player[i]) {
-                    strike++
-                } else if (player.contains(computer[i])) {
-                    ball++
-                }
-            }
+            val (strike, ball) = referee.call(computer, player)
 
             outputview.printGameResult(strike, ball)
+            referee.reset()
 
-            if (strike != 3) {
-                strike = 0
-                ball = 0
-            }
         }
 
         outputview.printWin()
@@ -40,8 +33,7 @@ class Game {
     private fun selectNumber(): List<Int> {
         val inputNumber = mutableListOf<Int>()
 
-        inputview.printInputNumber()
-        val input = readlnOrNull() ?: ""
+        val input = inputview.printInputNumber()
         val numbers = input.map { it.toString().toIntOrNull() }
 
         for (num in numbers) {
@@ -53,8 +45,7 @@ class Game {
         return inputNumber
     }
 
-    private fun isTreeStrike(strike: Int): Boolean {
-        return strike == 3
+    private fun isThreeStrike(strike: Int): Boolean {
+        return strike == THREE_STRIKE
     }
-
 }

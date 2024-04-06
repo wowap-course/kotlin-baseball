@@ -8,13 +8,14 @@ class GameSetup {
     fun generateRandomNumber(): MutableList<Int> {
         val computer = Computer()
 
-        repeat(3) {
+        while (computer.number.size < 3) {
             val randomNumber = (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random()
             if (!computer.number.contains(randomNumber)) {
                 computer.number.add(randomNumber)
             }
         }
 
+        println(computer.number)
         return computer.number
     }
 }
