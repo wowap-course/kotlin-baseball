@@ -5,8 +5,6 @@ class Referee {
     var ball = Computer.RESET_NUMBER
 
     fun call(computer: MutableList<Int>, player: List<Int>): Pair<Int, Int> {
-
-
         for (i in computer.indices) {
             if (computer[i] == player[i]) {
                 strike++
