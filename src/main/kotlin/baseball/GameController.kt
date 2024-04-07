@@ -13,7 +13,10 @@ class GameController(
         outputView.gameStart()
         val randomNumberGenerator = RandomNumberGenerator()
         val randomBaseballNumber: List<Int> = randomNumberGenerator.getNumber()
-
+        while(true) {
+            val resultCount= Game().start(randomBaseballNumber, checkInt())
+            outputView.result(resultCount)
+        }
     }
 
     fun checkInt():Int{
