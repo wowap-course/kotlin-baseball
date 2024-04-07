@@ -2,7 +2,7 @@ package baseball.domain
 
 class RandomNumberGenerator {
 
-    fun checkRandomNumberSize(numbers: List<Int>) : Boolean = (numbers.size == NUMBER_LENGTH)
+    fun checkRandomNumberSize(numbers: List<Int>): Boolean = (numbers.size == NUMBER_LENGTH)
 
     companion object {
         const val MIN_RANDOM_NUMBER = 1
