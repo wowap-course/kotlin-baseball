@@ -1,6 +1,6 @@
-package baseball.domain
+package baseball
 
-import baseball.domain.numbergenerator.NumberGenerator
+import baseball.domain.Game
 import baseball.domain.numbergenerator.RandomNumberGenerator
 import baseball.view.InputView
 import baseball.view.OutputView
@@ -11,19 +11,26 @@ class GameController(
 ) {
     fun run() {
         outputView.gameStart()
-        start()
-    }
-
-    private fun start(){
         val randomNumberGenerator = RandomNumberGenerator()
         val randomBaseballNumber: List<Int> = randomNumberGenerator.getNumber()
-        val baseballNumber = inputView.inputBaseBallNumber()
-        try {
-            require(baseballNumber is Int)
-            require(baseballNumber in 100..999)
-        } catch (e: IllegalArgumentException) {
-            return start()
-        }
+
     }
 
+    fun checkInt():Int{
+        try {
+            val baseballNumber = inputView.inputBaseBallNumber()
+            require(baseballNumber is Int)
+            require(baseballNumber in GameController.MIN_BASEBALL_NUMBER..GameController.MAX_BASEBALL_NUMBER)
+            return baseballNumber
+        } catch (e: IllegalArgumentException) {
+            return checkInt()
+        }
+
+    }
+
+
+    companion object{
+        private const val MIN_BASEBALL_NUMBER = 100
+        private const val MAX_BASEBALL_NUMBER = 999
+    }
 }
