@@ -1,6 +1,5 @@
 package baseball.domain
 
-
 import baseball.view.InputView
 import baseball.view.OutputView
 
@@ -16,33 +15,34 @@ class BaseballController {
 
     private fun baseballStart() {
         baseballPlay(RandomNumberGenerator().randomNumberGenerate())
+        outputView.endBaseballPlay()
         decideMoreOrStop()
     }
-
 
     private fun baseballPlay(answer: List<Int>) {
         var strike = INIT_NUMBER
         var ball = INIT_NUMBER
         while (strike != END_GAME_CONDITION) {
-            val input = inputUserNumber(answer)
-            strike = judge.calculateStrike(input, answer)
-            ball = judge.calculateBall(input, answer)
+            val input = inputView.inputNumber()
+            if (isWrongInput(input)) continue
+            val convertedInput = input.toString().map { it.toString().toInt() }
+            strike = judge.calculateStrike(convertedInput, answer)
+            ball = judge.calculateBall(convertedInput, answer)
             printResult(strike, ball)
         }
-        outputView.endBaseballPlay()
     }
 
-    private fun inputUserNumber(answer: List<Int>): List<Int> {
-        val input = inputView.inputNumber()
+    private fun isWrongInput(input: Int?): Boolean {
         try {
             require(input != null) { "[ERROR] 입력이 잘못되었습니다." }
             val convertedInput = input.toString().map { it.toString().toInt() }
+            require(convertedInput.size == MAX_INPUT_LENGTH) { "[ERROR] 3가지 숫자를 입력해야 합니다" }
             require(convertedInput.toSet().size == convertedInput.size) { "[ERROR] 중복된 숫자 입력" }
         } catch (e: IllegalArgumentException) {
             println(e.message)
-            baseballPlay(answer)
+            return true
         }
-        return input.toString().map { it.toString().toInt() }
+        return false
     }
 
     private fun decideMoreOrStop() {
