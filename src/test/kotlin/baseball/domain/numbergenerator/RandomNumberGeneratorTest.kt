@@ -1,7 +1,7 @@
 package baseball.domain.numbergenerator
 
-import baseball.domain.digitsrule.DigitsRule
-import baseball.domain.referee.Referee
+import baseball.domain.DigitsRule
+import baseball.domain.Referee
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

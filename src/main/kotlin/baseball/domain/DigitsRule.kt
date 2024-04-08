@@ -1,4 +1,4 @@
-package baseball.domain.digitsrule
+package baseball.domain
 
 class DigitsRule(private val rule : Int) {
     fun setDigits(number: String): Boolean {

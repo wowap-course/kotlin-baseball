@@ -1,13 +1,12 @@
 package baseball.domain.referee
 
-import baseball.domain.digitsrule.DigitsRule
+import baseball.domain.Referee
+import baseball.domain.DigitsRule
 import baseball.domain.numbergenerator.NumberGenerator
 import org.assertj.core.api.Assertions.assertThat
-import org.assertj.core.api.Assertions.`in`
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
-import java.sql.Ref
 
 class RefereeTest () {
     inner class FakeNumberGenerator : NumberGenerator {

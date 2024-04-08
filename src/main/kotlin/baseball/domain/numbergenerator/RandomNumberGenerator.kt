@@ -1,7 +1,5 @@
 package baseball.domain.numbergenerator
 
-import baseball.domain.digitsrule.DigitsRule
-
 class RandomNumberGenerator : NumberGenerator  {
     override fun get(): String {
         val number = mutableSetOf<Int>()

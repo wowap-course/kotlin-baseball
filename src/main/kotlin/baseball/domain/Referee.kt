@@ -1,6 +1,5 @@
-package baseball.domain.referee
+package baseball.domain
 
-import baseball.domain.digitsrule.DigitsRule
 import baseball.domain.numbergenerator.NumberGenerator
 
 class Referee(
