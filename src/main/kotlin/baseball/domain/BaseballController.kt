@@ -10,16 +10,16 @@ class BaseballController {
 
     fun run() {
         println("숫자 야구 게임을 시작합니다.")
-        baseballStart()
+        startBaseball()
     }
 
-    private fun baseballStart() {
-        baseballPlay(RandomNumberGenerator().randomNumberGenerate())
+    private fun startBaseball() {
+        playBaseball(RandomNumberGenerator().randomNumberGenerate())
         outputView.endBaseballPlay()
         decideMoreOrStop()
     }
 
-    private fun baseballPlay(answer: List<Int>) {
+    private fun playBaseball(answer: List<Int>) {
         var strike = INIT_NUMBER
         var ball = INIT_NUMBER
         while (strike != END_GAME_STRIKE_CONDITION) {
@@ -35,7 +35,7 @@ class BaseballController {
     private fun decideMoreOrStop() {
         val command = inputMoreOrStopCommand()
         if (command == MORE_GAME_COMMAND) {
-            baseballStart()
+            startBaseball()
         }
     }
 
