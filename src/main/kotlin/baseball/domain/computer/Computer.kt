@@ -1,7 +1,6 @@
 package baseball.domain.computer
 
 class Computer {
-//    var number = mutableListOf<Int>()
     var number = mutableListOf<Int>()
 
 
