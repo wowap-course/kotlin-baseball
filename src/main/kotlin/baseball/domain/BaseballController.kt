@@ -41,7 +41,7 @@ class BaseballController {
 
     private fun printResult(strike: Int, ball: Int) {
         when {
-            strike == NOT_COUNTED && ball == NOT_COUNTED -> outputView.printNothing()
+            (strike == NOT_COUNTED && ball == NOT_COUNTED) -> outputView.printNothing()
             (ball == NOT_COUNTED) -> outputView.printStrikeOnly(strike)
             (strike == NOT_COUNTED) -> outputView.printBallOnly(ball)
             else -> outputView.printBallAndStrike(strike, ball)
