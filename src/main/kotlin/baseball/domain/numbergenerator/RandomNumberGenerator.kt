@@ -1,12 +1,14 @@
 package baseball.domain.numbergenerator
 
-class RandomNumberGenerator : NumberGenerator {
+import baseball.domain.digitsrule.DigitsRule
+
+class RandomNumberGenerator : NumberGenerator  {
     override fun get(): String {
-        var number = ""
-        number += (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random().toString()
-        number += (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random().toString()
-        number += (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random().toString()
-        return number
+        val number = mutableSetOf<Int>()
+        while(number.size < 4) {
+            number.add((MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random())
+        }
+        return number.toString()
     }
 
     companion object {
