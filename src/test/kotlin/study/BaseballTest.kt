@@ -1,12 +1,7 @@
 package study
 
 import baseball.domain.computer.Computer
-import baseball.domain.computer.GameSetup
-import baseball.domain.player.Game
-import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
-import kotlin.random.Random
 
 class BaseballTest {
 

@@ -1,11 +1,11 @@
-package baseball.domain.computer
+package baseball.domain.numberRules
 
+import baseball.domain.computer.Computer
 import baseball.domain.computer.Computer.Companion.MAX_RANDOM_NUMBER
 import baseball.domain.computer.Computer.Companion.MIN_RANDOM_NUMBER
 
-class GameSetup {
-
-    fun generateRandomNumber(): MutableList<Int> {
+class ThreeRandomNumberGenerator : ComputerGenerateNumberRule {
+    override fun generateRandomNumber(): MutableList<Int> {
         val computer = Computer()
 
         while (computer.number.size < 3) {

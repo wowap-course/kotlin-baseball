@@ -1,10 +1,14 @@
 package baseball.domain.computer
 
+import baseball.view.OutputView
+
 class Referee {
     var strike = Computer.RESET_NUMBER
     var ball = Computer.RESET_NUMBER
 
-    fun call(computer: MutableList<Int>, player: List<Int>): Pair<Int, Int> {
+    private val outputview = OutputView()
+
+    fun call(computer: MutableList<Int>, player: List<Int>) {
         for (i in computer.indices) {
             if (computer[i] == player[i]) {
                 strike++
@@ -13,7 +17,7 @@ class Referee {
             }
         }
 
-        return strike to ball
+        outputview.printGameResult(strike, ball)
     }
 
     fun reset() {
@@ -21,5 +25,9 @@ class Referee {
             strike = Computer.RESET_NUMBER
             ball = Computer.RESET_NUMBER
         }
+    }
+
+    fun isThreeStrike(): Boolean {
+        return strike == Computer.THREE_STRIKE
     }
 }
