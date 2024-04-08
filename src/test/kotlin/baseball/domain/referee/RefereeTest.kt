@@ -16,9 +16,4 @@ class RefereeTest {
         val referee = Referee(FakeNumberGenerator(), DigitsRule(3))
         assertThat(referee.makeNumber()).isEqualTo("123")
     }
-
-    @Test
-    fun `숫자에 대해 낫싱을 판단할 수 있다`() {
-        TODO("Not yet implemented")
-    }
 }
