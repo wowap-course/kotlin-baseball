@@ -45,7 +45,12 @@ class BaseballController {
         return input.toString().map { it.toString().toInt() }
     }
 
-
+    private fun decideMoreOrStop() {
+        val command = inputCommand()
+        if(command == MORE_GAME_COMMAND) {
+            baseballStart()
+        }
+    }
 
     companion object {
         const val NOT_COUNTED = 0
