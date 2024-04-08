@@ -1,5 +1,5 @@
 package baseball.domain.numberRules
 
 interface PlayerSelectNumberRule {
-    fun selectNumber(): List<Int>
+    fun selectNumber(input: String): List<Int>
 }

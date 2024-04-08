@@ -1,6 +1,7 @@
 package baseball.domain.computer
 
 class Computer {
+//    var number = mutableListOf<Int>()
     var number = mutableListOf<Int>()
 
 
@@ -9,5 +10,6 @@ class Computer {
         const val MAX_RANDOM_NUMBER = 9
         const val THREE_STRIKE = 3
         const val RESET_NUMBER = 0
+        const val MAX_COM_NUMBER_SIZE = 3
     }
 }
