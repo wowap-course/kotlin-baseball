@@ -1,7 +1,6 @@
 package baseball.domain.numbergenerator
 
 import baseball.domain.DigitsRule
-import baseball.domain.Opponent
 import baseball.domain.Referee
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

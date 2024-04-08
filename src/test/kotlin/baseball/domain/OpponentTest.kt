@@ -4,10 +4,8 @@ import baseball.domain.DigitsRule
 import baseball.domain.Opponent
 import baseball.domain.Referee
 import baseball.domain.numbergenerator.NumberGenerator
-import baseball.domain.numbergenerator.RandomNumberGenerator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 
 class OpponentTest {
     inner class FakeNumberGenerator : NumberGenerator {

@@ -1,7 +1,6 @@
 package baseball.domain
 
 import baseball.domain.numbergenerator.NumberGenerator
-import baseball.domain.numbergenerator.RandomNumberGenerator
 
 class Referee(
     private val numberGenerator: NumberGenerator,
