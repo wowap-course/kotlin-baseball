@@ -57,11 +57,14 @@ class BaseBallGameController{
     
     func restart() throws -> Bool{
         let number = inputView.restart()
-        if number != 1 && number != 2{
+        if number != RESTART_NUM1 && number != RESTART_NUM2{
             throw RestartError.IllegalArgumentException
         } else {
             return number == 1 ? true : false
         }
     }
+    
+    private let RESTART_NUM1 = 1
+    private let RESTART_NUM2 = 2
     
 }
