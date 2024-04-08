@@ -31,6 +31,13 @@ class GameController(
 
     }
 
+    fun gameRestart(){
+        val restartChoice = inputView.inputGameRestart()
+        when(restartChoice){
+            1 -> return run()
+            2 -> outputView.gameStop()
+        }
+    }
 
     companion object{
         private const val MIN_BASEBALL_NUMBER = 100
