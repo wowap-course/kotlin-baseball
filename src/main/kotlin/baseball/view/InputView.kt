@@ -1,7 +1,7 @@
 package baseball.view
 
 class InputView {
-    fun inputNumber() : Int? {
+    fun inputNumber(): Int? {
         print("숫자를 입력해주세요 : ")
         return readln().toIntOrNull()
     }

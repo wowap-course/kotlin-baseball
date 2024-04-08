@@ -9,7 +9,7 @@ class OutputView {
         println("${strike}스트라이크")
     }
 
-    fun printBallOnly(ball : Int) {
+    fun printBallOnly(ball: Int) {
         println("${ball}볼")
     }
 

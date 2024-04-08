@@ -47,7 +47,7 @@ class BaseballController {
 
     private fun decideMoreOrStop() {
         val command = inputCommand()
-        if(command == MORE_GAME_COMMAND) {
+        if (command == MORE_GAME_COMMAND) {
             baseballStart()
         }
     }
@@ -61,7 +61,7 @@ class BaseballController {
         }
     }
 
-    private fun inputCommand() : Int {
+    private fun inputCommand(): Int {
         val command = inputView.printDecideMoreOrStop()
         try {
             require(command != null) { "[ERROR] 입력은 정수형이여야 합니다." }
