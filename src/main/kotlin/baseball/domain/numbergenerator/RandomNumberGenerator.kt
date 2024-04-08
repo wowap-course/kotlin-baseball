@@ -1,7 +1,7 @@
-package baseball.domain
+package baseball.domain.numbergenerator
 
-class RandomNumberGenerator {
-    fun randomNumberGenerate(): List<Int> {
+class RandomNumberGenerator : NumberGenerator {
+    override fun generateNumber(): List<Int> {
         val numbers = mutableListOf<Int>()
         while (numbers.distinct().size < NUMBER_LENGTH) {
             numbers.add((MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random())

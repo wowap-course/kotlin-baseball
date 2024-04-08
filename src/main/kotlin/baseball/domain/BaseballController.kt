@@ -1,5 +1,6 @@
 package baseball.domain
 
+import baseball.domain.numbergenerator.RandomNumberGenerator
 import baseball.view.InputView
 import baseball.view.OutputView
 
@@ -14,7 +15,7 @@ class BaseballController {
     }
 
     private fun startBaseball() {
-        playBaseball(RandomNumberGenerator().randomNumberGenerate())
+        playBaseball(RandomNumberGenerator().generateNumber())
         outputView.endBaseballPlay()
         decideMoreOrStop()
     }
