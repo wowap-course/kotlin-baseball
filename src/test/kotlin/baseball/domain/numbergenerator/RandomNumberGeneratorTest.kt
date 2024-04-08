@@ -1,9 +1,8 @@
 package baseball.domain.numbergenerator
 
 import baseball.domain.digitsrule.DigitsRule
-import baseball.domain.host.Host
+import baseball.domain.referee.Referee
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
@@ -15,13 +14,13 @@ class RandomNumberGeneratorTest {
     }
     @Test
     fun `숫자는 정해진 자릿수가 있다`() {
-        val host = Host(RandomNumberGenerator(), DigitsRule(3))
-        assertThat(host.makeNumber().length).isEqualTo(3)
+        val referee = Referee(RandomNumberGenerator(), DigitsRule(3))
+        assertThat(referee.makeNumber().length).isEqualTo(3)
     }
 
     @Test
     fun `각각의 숫자는 서로 다르다`() {
-        val host = Host(FakeNumberGenerator(), DigitsRule(3))
-        assertThrows<IllegalArgumentException> { host.makeNumber() }
+        val referee = Referee(FakeNumberGenerator(), DigitsRule(3))
+        assertThrows<IllegalArgumentException> { referee.makeNumber() }
     }
 }

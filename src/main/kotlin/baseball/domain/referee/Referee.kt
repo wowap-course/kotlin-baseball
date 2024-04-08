@@ -1,10 +1,9 @@
-package baseball.domain.host
+package baseball.domain.referee
 
 import baseball.domain.digitsrule.DigitsRule
 import baseball.domain.numbergenerator.NumberGenerator
-import baseball.domain.numbergenerator.RandomNumberGenerator
 
-class Host(
+class Referee(
     private val numberGenerator: NumberGenerator,
     private val digitsRule: DigitsRule,
     ) {
