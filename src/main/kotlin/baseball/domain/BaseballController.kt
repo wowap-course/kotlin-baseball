@@ -61,6 +61,17 @@ class BaseballController {
         }
     }
 
+    private fun inputCommand() : Int {
+        val command = inputView.printDecideMoreOrStop()
+        try {
+            require(command != null) { "[ERROR] 입력은 정수형이여야 합니다." }
+            require(command == MORE_GAME_COMMAND || command == END_GAME_COMMAND) { "[ERROR] 입력은 1 또는 2여야 합니다." }
+        } catch (e: IllegalArgumentException) {
+            println(e.message)
+            decideMoreOrStop()
+        }
+        return command!!.toInt()
+    }
 
     companion object {
         const val NOT_COUNTED = 0
