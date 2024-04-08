@@ -32,19 +32,6 @@ class BaseballController {
         }
     }
 
-    private fun isWrongInput(input: Int?): Boolean {
-        try {
-            require(input != null) { "[ERROR] 입력이 잘못되었습니다." }
-            val convertedInput = input.toString().map { it.toString().toInt() }
-            require(convertedInput.size == MAX_INPUT_LENGTH) { "[ERROR] 3가지 숫자를 입력해야 합니다" }
-            require(convertedInput.toSet().size == convertedInput.size) { "[ERROR] 중복된 숫자 입력" }
-        } catch (e: IllegalArgumentException) {
-            println(e.message)
-            return true
-        }
-        return false
-    }
-
     private fun decideMoreOrStop() {
         val command = inputCommand()
         if (command == MORE_GAME_COMMAND) {
@@ -63,11 +50,7 @@ class BaseballController {
 
     private fun inputCommand(): Int {
         val command = inputView.printDecideMoreOrStop()
-        try {
-            require(command != null) { "[ERROR] 입력은 정수형이여야 합니다." }
-            require(command == MORE_GAME_COMMAND || command == END_GAME_COMMAND) { "[ERROR] 입력은 1 또는 2여야 합니다." }
-        } catch (e: IllegalArgumentException) {
-            println(e.message)
+        if(InputChecker().isWrongMoreOrStopCommand(command)) {
             decideMoreOrStop()
         }
         return command!!.toInt()
