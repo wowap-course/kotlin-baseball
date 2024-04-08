@@ -11,8 +11,8 @@ enum BallCountError: Error {
 import Foundation
 
 class UserBall{
-    var number : Int = 0
-    init(number: Int) throws {
+    var number : [Int] = []
+    init(number: [Int]) throws {
         self.number = number
         
         guard hasduplication(number: number), hasZeroNumber(number: number) else {
@@ -21,20 +21,16 @@ class UserBall{
 
     }
     
-    private func hasduplication(number: Int) -> Bool {
-        var test = Set<Character>()
-        for i in String(number){
-            test.insert(i)
-        }
-        print(test)
-        return test.count == BALL_LENGTH
+    private func hasduplication(number: [Int]) -> Bool {
+        let uniqueNumber = Set(number)
+        return uniqueNumber.count == BALL_LENGTH
     }
     
-    private func hasZeroNumber(number : Int) -> Bool{
-        return !String(number).contains(INCLUDE_ZERO)
+    private func hasZeroNumber(number : [Int]) -> Bool{
+        return !number.contains(INCLUDE_ZERO)
     }
     
     private let BALL_LENGTH = 3
-    private let INCLUDE_ZERO = "0"
+    private let INCLUDE_ZERO = 0
     
 }
