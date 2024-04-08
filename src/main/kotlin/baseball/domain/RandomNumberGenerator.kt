@@ -6,7 +6,7 @@ class RandomNumberGenerator {
         while (numbers.distinct().size < NUMBER_LENGTH) {
             numbers.add((MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random())
         }
-        return numbers
+        return numbers.distinct()
     }
 
     companion object {
