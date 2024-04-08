@@ -32,6 +32,21 @@ class BaseballController {
         outputView.endBaseballPlay()
     }
 
+    private fun inputUserNumber(answer: List<Int>): List<Int> {
+        val input = inputView.inputNumber()
+        try {
+            require(input != null) { "[ERROR] 입력이 잘못되었습니다." }
+            val convertedInput = input.toString().map { it.toString().toInt() }
+            require(convertedInput.toSet().size == convertedInput.size) { "[ERROR] 중복된 숫자 입력" }
+        } catch (e: IllegalArgumentException) {
+            println(e.message)
+            baseballPlay(answer)
+        }
+        return input.toString().map { it.toString().toInt() }
+    }
+
+
+
     companion object {
         const val NOT_COUNTED = 0
         const val INIT_NUMBER = 0
