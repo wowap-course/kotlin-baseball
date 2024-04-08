@@ -1,5 +1,7 @@
 package baseball.domain
 
-class Opponent(val number : String) {
+import baseball.domain.numbergenerator.NumberGenerator
 
+class Opponent(numberGenerator: NumberGenerator) {
+    val number = numberGenerator.get()
 }

@@ -2,6 +2,7 @@ package baseball.domain.referee
 
 import baseball.domain.Referee
 import baseball.domain.DigitsRule
+import baseball.domain.Opponent
 import baseball.domain.numbergenerator.NumberGenerator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
@@ -12,7 +13,7 @@ class RefereeTest () {
     inner class FakeNumberGenerator : NumberGenerator {
         override fun get(): String = "123"
     }
-    private val referee = Referee(FakeNumberGenerator(), DigitsRule(3))
+    private val referee = Referee(Opponent(FakeNumberGenerator()), DigitsRule(3))
     @Test
     fun `상대방의 숫자를 알고 있다`() {
         assertThat(referee.makeNumber()).isEqualTo("123")

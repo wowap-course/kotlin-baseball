@@ -3,18 +3,18 @@ package baseball.domain
 import baseball.domain.numbergenerator.NumberGenerator
 
 class Referee(
-    private val numberGenerator: NumberGenerator,
+    private val opponent: Opponent,
     private val digitsRule: DigitsRule,
     ) {
     fun makeNumber() : String {
-        val number : String = numberGenerator.get()
+        val number = opponent.number
         val rule = digitsRule.setDigits(number)
         require(number.toSet().size == number.length)
         require(rule)
         return number
     }
     fun refereeNumber(answer : String) : String {
-        val number : String = numberGenerator.get()
+        val number = opponent.number
         var ball = 0
         var strike = 0
         answer.forEachIndexed { index, c ->

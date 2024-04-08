@@ -8,9 +8,12 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class OpponentTest {
+    inner class FakeNumberGenerator : NumberGenerator {
+        override fun get(): String = "123"
+    }
     @Test
     fun `게임에서 사용할 숫자를 가진다`() {
-        val opponent = Opponent("123");
+        val opponent = Opponent(FakeNumberGenerator());
         assertThat(opponent.number).isEqualTo("123")
     }
 }
