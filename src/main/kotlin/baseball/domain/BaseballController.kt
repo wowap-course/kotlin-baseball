@@ -31,4 +31,13 @@ class BaseballController {
         }
         outputView.endBaseballPlay()
     }
+
+    companion object {
+        const val NOT_COUNTED = 0
+        const val INIT_NUMBER = 0
+        const val MAX_INPUT_LENGTH = 3
+        const val END_GAME_CONDITION = 3
+        const val MORE_GAME_COMMAND = 1
+        const val END_GAME_COMMAND = 2
+    }
 }
