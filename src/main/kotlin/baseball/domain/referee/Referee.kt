@@ -8,10 +8,15 @@ class Referee(
     private val digitsRule: DigitsRule,
     ) {
     fun makeNumber() : String {
-        val number = numberGenerator.get()
+        val number : String = numberGenerator.get()
         val rule = digitsRule.setDigits(number)
         require(number.toSet().size == number.length)
         require(rule)
         return number
+    }
+    fun refereeNumber(answer : String) : String {
+        val number : String = numberGenerator.get()
+        if((answer + number).toSet().size == answer.length * 2) return "낫싱"
+        return "ball"
     }
 }
