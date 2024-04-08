@@ -20,4 +20,15 @@ class BaseballController {
     }
 
 
+    private fun baseballPlay(answer: List<Int>) {
+        var strike = INIT_NUMBER
+        var ball = INIT_NUMBER
+        while (strike != END_GAME_CONDITION) {
+            val input = inputUserNumber(answer)
+            strike = judge.calculateStrike(input, answer)
+            ball = judge.calculateBall(input, answer)
+            printResult(strike, ball)
+        }
+        outputView.endBaseballPlay()
+    }
 }
