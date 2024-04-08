@@ -22,7 +22,7 @@ class BaseballController {
     private fun baseballPlay(answer: List<Int>) {
         var strike = INIT_NUMBER
         var ball = INIT_NUMBER
-        while (strike != END_GAME_CONDITION) {
+        while (strike != END_GAME_STRIKE_CONDITION) {
             val input = inputView.inputNumber()
             if (InputChecker().isWrongNumberInput(input)) continue
             val convertedInput = input.toString().map { it.toString().toInt() }
@@ -33,7 +33,7 @@ class BaseballController {
     }
 
     private fun decideMoreOrStop() {
-        val command = inputCommand()
+        val command = inputMoreOrStopCommand()
         if (command == MORE_GAME_COMMAND) {
             baseballStart()
         }
@@ -48,7 +48,7 @@ class BaseballController {
         }
     }
 
-    private fun inputCommand(): Int {
+    private fun inputMoreOrStopCommand(): Int {
         val command = inputView.printDecideMoreOrStop()
         if(InputChecker().isWrongMoreOrStopCommand(command)) {
             decideMoreOrStop()
@@ -59,8 +59,7 @@ class BaseballController {
     companion object {
         const val NOT_COUNTED = 0
         const val INIT_NUMBER = 0
-        const val MAX_INPUT_LENGTH = 3
-        const val END_GAME_CONDITION = 3
+        const val END_GAME_STRIKE_CONDITION = 3
         const val MORE_GAME_COMMAND = 1
     }
 }
