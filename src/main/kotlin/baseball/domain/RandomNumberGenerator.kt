@@ -3,14 +3,11 @@ package baseball.domain
 class RandomNumberGenerator {
     fun randomNumberGenerate(): List<Int> {
         val numbers = mutableListOf<Int>()
-        while (!checkRandomNumberSize(numbers)) {
+        while (numbers.distinct().size < NUMBER_LENGTH) {
             numbers.add((MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random())
-            numbers.toSet()
         }
         return numbers
     }
-
-    fun checkRandomNumberSize(numbers: List<Int>): Boolean = (numbers.size == NUMBER_LENGTH)
 
     companion object {
         const val MIN_RANDOM_NUMBER = 1
