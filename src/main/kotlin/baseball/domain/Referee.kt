@@ -1,19 +1,20 @@
 package baseball.domain
 
 import baseball.domain.numbergenerator.NumberGenerator
+import baseball.domain.numbergenerator.RandomNumberGenerator
 
 class Referee(
-    private val opponent: Opponent,
+    private val numberGenerator: NumberGenerator,
     private val digitsRule: DigitsRule,
     ) {
     fun makeNumber() : String {
-        val number = opponent.number
+        val number = numberGenerator.get()
         val rule = digitsRule.setDigits(number)
-        require(number.toSet().size == number.length)
         require(rule)
+        require(number.toSet().size == number.length)
         return number
     }
-    fun refereeNumber(answer : String) : String {
+    fun refereeNumber(opponent : Opponent, answer : String) : String {
         val number = opponent.number
         var ball = 0
         var strike = 0

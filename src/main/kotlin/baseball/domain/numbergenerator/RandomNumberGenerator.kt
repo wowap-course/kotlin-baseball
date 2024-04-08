@@ -6,12 +6,12 @@ class RandomNumberGenerator : NumberGenerator  {
         while(number.size < MAX_NUMBER_LENGTH) {
             number.add((MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random())
         }
-        return number.toString()
+        return number.joinToString("")
     }
 
     companion object {
         private const val MIN_RANDOM_NUMBER = 1
         private const val MAX_RANDOM_NUMBER = 9
-        private const val MAX_NUMBER_LENGTH = 4
+        private const val MAX_NUMBER_LENGTH = 3
     }
 }
