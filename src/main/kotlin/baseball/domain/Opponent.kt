@@ -1,7 +1,7 @@
 package baseball.domain
 
-class Opponent(val number : Int) {
+class Opponent(val number : String) {
     init {
-        require(number.toString().toSet().size == number.toString().length)
+        require(number.toSet().size == number.length)
     }
 }
