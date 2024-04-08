@@ -50,7 +50,7 @@ class BaseballController {
 
     private fun inputMoreOrStopCommand(): Int {
         val command = inputView.printDecideMoreOrStop()
-        if(InputChecker().isWrongMoreOrStopCommand(command)) {
+        if (InputChecker().isWrongMoreOrStopCommand(command)) {
             decideMoreOrStop()
         }
         return command!!.toInt()
