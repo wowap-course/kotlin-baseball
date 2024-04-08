@@ -48,7 +48,7 @@ class BaseBallGameController{
     }
     
     func playOneRound(userNumber: [Int], computerNumber: [Int]){
-        let referee = Referee(nothingJudgement: NothingJudgment(), ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
+        let referee = Referee(ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
         
         let result = referee.gameResult(userNumber: userNumber, computerNumber: computerNumber)
         
