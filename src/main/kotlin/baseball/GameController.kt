@@ -1,11 +1,11 @@
-package baseball.domain.player
+package baseball
 
 import baseball.domain.computer.Referee
 import baseball.domain.numberRules.SelectNumber
 import baseball.domain.numberRules.ThreeRandomNumberGenerator
 import baseball.view.OutputView
 
-class Game {
+class GameController {
     private val gameSetup = ThreeRandomNumberGenerator()
     private val seletNumber = SelectNumber()
     private val outputview = OutputView()
@@ -17,8 +17,9 @@ class Game {
         while (!referee.isThreeStrike()) {
             val player =  seletNumber.selectNumber()
 
-            referee.call(computer, player)
+            val (strike, ball) = referee.call(computer, player)
             referee.reset()
+            outputview.printGameResult(strike, ball)
         }
 
         outputview.printWin()

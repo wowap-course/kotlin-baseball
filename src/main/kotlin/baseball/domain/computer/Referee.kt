@@ -2,14 +2,12 @@ package baseball.domain.computer
 
 import baseball.domain.Score
 import baseball.domain.computer.Computer.Companion.RESET_NUMBER
-import baseball.view.OutputView
 
 class Referee {
-    var score = Score(RESET_NUMBER, RESET_NUMBER)
+    private var score = Score(RESET_NUMBER, RESET_NUMBER)
 
-    private val outputview = OutputView()
 
-    fun call(computerNumbers: MutableList<Int>, playerNumbers: List<Int>) {
+    fun call(computerNumbers: MutableList<Int>, playerNumbers: List<Int>): Pair<Int, Int> {
         for (i in computerNumbers.indices) {
             if (computerNumbers[i] == playerNumbers[i]) {
                 score.strike++
@@ -18,7 +16,7 @@ class Referee {
             }
         }
 
-        outputview.printGameResult(score.strike, score.ball)
+        return score.strike to score.ball
     }
 
     fun reset() {

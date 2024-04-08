@@ -1,8 +1,8 @@
 package racingcar
 
-import baseball.domain.player.Game
+import baseball.GameController
 
 fun main() {
-    val game = Game()
+    val game = GameController()
     game.playGame()
 }
