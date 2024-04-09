@@ -8,15 +8,13 @@
 import Foundation
 
 class Referee{
-    let ballJudgement : BallJudgment
-    let strikeJudgement : StrikeJudgment
-    
-    init(ballJudgement: BallJudgment, strikeJudgement: StrikeJudgment) {
-        self.ballJudgement = ballJudgement
-        self.strikeJudgement = strikeJudgement
+    func ballCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> Int {
+        return inputNumbers1.filter { num in
+            inputNumbers2.contains(num) && num != inputNumbers2[inputNumbers1.firstIndex(of: num)!]
+        }.count
     }
     
-    func gameResult(userNumbers: [Int], computerNumbers: [Int]) -> [Int]{
-        return [ballJudgement.gameCount(inputNumbers1: userNumbers, inputNumbers2: computerNumbers), strikeJudgement.gameCount(inputNumbers1: userNumbers, inputNumbers2: computerNumbers)]
+    func strikeCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> Int {
+        return inputNumbers1.enumerated().filter { $0.element == inputNumbers2[$0.offset] }.count
     }
 }
