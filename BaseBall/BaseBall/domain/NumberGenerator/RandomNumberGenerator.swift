@@ -8,10 +8,10 @@
 import Foundation
 
 class RandomNumberGenerator : NumberGenerator{
-    var num = Array(1...9)
+    var nums = Array(1...9)
     
-    func getNumber() -> [Int] {
-        num.shuffle()
-        return Array(num[0...2])
+    func getNumbers() -> [Int] {
+        nums.shuffle()
+        return Array(nums[0...2])
     }
 }

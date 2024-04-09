@@ -8,10 +8,10 @@
 import Foundation
 
 class Opponent{
-    var number : [Int]
+    var numbers : [Int]
     
     init(numberGenerator : NumberGenerator){
-        self.number = numberGenerator.getNumber()
+        self.numbers = numberGenerator.getNumbers()
     }
     
 }

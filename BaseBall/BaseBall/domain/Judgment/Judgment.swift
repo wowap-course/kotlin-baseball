@@ -8,5 +8,5 @@
 import Foundation
 
 protocol Judgment {
-    func gameCount(userNumber: [Int], computerNumber: [Int]) -> Int
+    func gameCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> Int
 }

@@ -16,7 +16,7 @@ class Referee{
         self.strikeJudgement = strikeJudgement
     }
     
-    func gameResult(userNumber: [Int], computerNumber: [Int]) -> [Int]{
-        return [ballJudgement.gameCount(userNumber: userNumber, computerNumber: computerNumber), strikeJudgement.gameCount(userNumber: userNumber, computerNumber: computerNumber)]
+    func gameResult(userNumbers: [Int], computerNumbers: [Int]) -> [Int]{
+        return [ballJudgement.gameCount(inputNumbers1: userNumbers, inputNumbers2: computerNumbers), strikeJudgement.gameCount(inputNumbers1: userNumbers, inputNumbers2: computerNumbers)]
     }
 }

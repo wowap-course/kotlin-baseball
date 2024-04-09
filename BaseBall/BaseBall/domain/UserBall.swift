@@ -11,23 +11,23 @@ enum BallCountError: Error {
 import Foundation
 
 class UserBall{
-    var number : [Int] = []
-    init(number: [Int]) throws {
-        self.number = number
+    private(set) var numbers : [Int] = []
+    init(numbers: [Int]) throws {
+        self.numbers = numbers
         
-        guard hasduplication(number: number), hasZeroNumber(number: number) else {
+        guard hasduplication(numbers: numbers), hasZeroNumber(numbers: numbers) else {
              throw BallCountError.IllegalArgumentException
         }
 
     }
     
-    private func hasduplication(number: [Int]) -> Bool {
-        let uniqueNumber = Set(number)
-        return uniqueNumber.count == BALL_LENGTH
+    private func hasduplication(numbers: [Int]) -> Bool {
+        let uniqueNumbers = Set(numbers)
+        return uniqueNumbers.count == BALL_LENGTH
     }
     
-    private func hasZeroNumber(number : [Int]) -> Bool{
-        return !number.contains(INCLUDE_ZERO)
+    private func hasZeroNumber(numbers : [Int]) -> Bool{
+        return !numbers.contains(INCLUDE_ZERO)
     }
     
     private let BALL_LENGTH = 3

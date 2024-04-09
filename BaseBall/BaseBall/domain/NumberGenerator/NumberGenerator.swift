@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NumberGenerator{
-    func getNumber() -> [Int]
+    func getNumbers() -> [Int]
 }

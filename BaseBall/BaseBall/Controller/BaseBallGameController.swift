@@ -23,7 +23,7 @@ class BaseBallGameController{
     func run() {
         do {
             while restartJudge == true {
-                try playOneGame(computerNumber: Opponent.init(numberGenerator: RandomNumberGenerator()).number)
+                try playOneGame(computerNumbers: Opponent.init(numberGenerator: RandomNumberGenerator()).numbers)
                 restartJudge = try restart()
             }
             
@@ -33,12 +33,12 @@ class BaseBallGameController{
         }
     }
     
-    func playOneGame(computerNumber: [Int]) throws{
+    func playOneGame(computerNumbers: [Int]) throws{
         do {
-            var userNumber = try UserBall(number: inputView.inputNumber()).number
-            while !userNumber.elementsEqual(computerNumber){
-                playOneRound(userNumber: userNumber, computerNumber: computerNumber)
-                userNumber = try UserBall(number: inputView.inputNumber()).number
+            var userNumbers = try UserBall(numbers: inputView.inputNumber()).numbers
+            while !userNumbers.elementsEqual(computerNumbers){
+                playOneRound(userNumbers: userNumbers, computerNumbers: computerNumbers)
+                userNumbers = try UserBall(numbers: inputView.inputNumber()).numbers
             }
         } catch {
             throw error
@@ -47,10 +47,10 @@ class BaseBallGameController{
         outputView.resultGamePrint()
     }
     
-    func playOneRound(userNumber: [Int], computerNumber: [Int]){
+    func playOneRound(userNumbers: [Int], computerNumbers: [Int]){
         let referee = Referee(ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
         
-        let result = referee.gameResult(userNumber: userNumber, computerNumber: computerNumber)
+        let result = referee.gameResult(userNumbers: userNumbers, computerNumbers: computerNumbers)
         
         outputView.nowScorePrint(result: result)
     }
@@ -60,7 +60,7 @@ class BaseBallGameController{
         if number != RESTART_NUM1 && number != RESTART_NUM2{
             throw RestartError.IllegalArgumentException
         } else {
-            return number == 1 ? true : false
+            return number == 1
         }
     }
     

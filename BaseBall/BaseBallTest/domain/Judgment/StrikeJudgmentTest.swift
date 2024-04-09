@@ -14,7 +14,7 @@ final class StrikeJudgmentTest: XCTestCase {
         let number2 = [4,5,3]
         
         let strikeJudgment = StrikeJudgment()
-        XCTAssertEqual(strikeJudgment.gameCount(userNumber: number1, computerNumber: number2), 1)
+        XCTAssertEqual(strikeJudgment.gameCount(inputNumbers1: number1, inputNumbers2: number2), 1)
     }
     
     func test_숫자가_있지만_다른_자리이면_스트라이크를_출력하지_않는다(){
@@ -22,7 +22,7 @@ final class StrikeJudgmentTest: XCTestCase {
         let number2 = [3,1,2]
         
         let strikeJudgment = StrikeJudgment()
-        XCTAssertEqual(strikeJudgment.gameCount(userNumber: number1, computerNumber: number2), 0)
+        XCTAssertEqual(strikeJudgment.gameCount(inputNumbers1: number1, inputNumbers2: number2), 0)
     }
     
     func test_맞는_숫자가_없으면_스트라이크를_출력하지_않는다(){
@@ -30,7 +30,7 @@ final class StrikeJudgmentTest: XCTestCase {
         let number2 = [4,5,6]
         
         let strikeJudgment = StrikeJudgment()
-        XCTAssertEqual(strikeJudgment.gameCount(userNumber: number1, computerNumber: number2), 0)
+        XCTAssertEqual(strikeJudgment.gameCount(inputNumbers1: number1, inputNumbers2: number2), 0)
     }
     
     func test_여러개의_스트라이크를_출력한다(){
@@ -38,7 +38,7 @@ final class StrikeJudgmentTest: XCTestCase {
         let number2 = [1,2,4]
         
         let strikeJudgment = StrikeJudgment()
-        XCTAssertEqual(strikeJudgment.gameCount(userNumber: number1, computerNumber: number2), 2)
+        XCTAssertEqual(strikeJudgment.gameCount(inputNumbers1: number1, inputNumbers2: number2), 2)
     }
 
 }
