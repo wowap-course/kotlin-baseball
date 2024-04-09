@@ -23,7 +23,7 @@ class BaseBallGameController{
     func run() {
         do {
             while restartJudge == true {
-                try playOneGame(computerNumbers: Opponent.init(numberGenerator: RandomNumberGenerator()).numbers)
+                try playOneGame(opponentNumbers: Opponent.init(numberGenerator: RandomNumberGenerator()).numbers)
                 restartJudge = try restart()
             }
             
@@ -33,11 +33,11 @@ class BaseBallGameController{
         }
     }
     
-    func playOneGame(computerNumbers: [Int]) throws{
+    func playOneGame(opponentNumbers: [Int]) throws{
         do {
             var userNumbers = try UserBall(numbers: inputView.inputNumber()).numbers
-            while !userNumbers.elementsEqual(computerNumbers){
-                playOneRound(userNumbers: userNumbers, computerNumbers: computerNumbers)
+            while !userNumbers.elementsEqual(opponentNumbers){
+                playOneRound(userNumbers: userNumbers, opponentNumbers: opponentNumbers)
                 userNumbers = try UserBall(numbers: inputView.inputNumber()).numbers
             }
         } catch {
@@ -47,10 +47,10 @@ class BaseBallGameController{
         outputView.resultGamePrint()
     }
     
-    func playOneRound(userNumbers: [Int], computerNumbers: [Int]){
+    func playOneRound(userNumbers: [Int], opponentNumbers: [Int]){
         let referee = Referee()
         
-        let result = referee.gameResultCount(inputNumbers1: userNumbers, inputNumbers2:computerNumbers)
+        let result = referee.gameResultCount(inputNumbers1: userNumbers, inputNumbers2:opponentNumbers)
         
         outputView.nowScorePrint(result: result)
     }
