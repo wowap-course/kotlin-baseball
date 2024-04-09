@@ -22,7 +22,13 @@
   - [x] IllegalArgumentException 발생 및 그 부분 부터 입력을 다시 받게 한다
 - [x] 스트라이크, 볼, 낫싱의 힌트를 표시한다.
 - [x] 게임을 종료한 후 게임을 다시 시작하거나 완전히 종료할 수 있다.
-- [ ] 모든 로직에 단위 테스트를 구현한다. 단, Controller, UI(System.out, System.in) 로직은 제외
 - [ ] README.md 파일에 구현할 기능 목록을 정리해 추가한다.
 - [ ] Git의 커밋 단위는 앞 단계에서 README.md 파일에 정리한 기능 목록 단위로 추가한다.
 
+
+< Test >
+- [x] 모든 로직에 단위 테스트를 구현한다. 단, Controller, UI(System.out, System.in) 로직은 제외
+-  [x] -> private 함수는 구현하지 않는다.
+-  [x] Judgement -> 스트라이크 볼 낫싱 힌트 표시 
+-  [x] 컴퓨터는 서로 다른 3개의 수를 선택한다
+-  [x] 사용자가 입력하는 수는 3자리수여야 한다
