@@ -2,6 +2,9 @@ package domain
 
 import baseball.domain.numbergenerator.RandomNumberGenerator
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
 
 class GameTest {
     @Test
@@ -10,12 +13,30 @@ class GameTest {
             println(getNumber())
         }
     }
+    @Test
+    fun `사용자가 입력하는 수는 3자리수여야 한다`(){
+        val input1 = 12
+        val input2 = 1234
+        assertThrows<IllegalArgumentException> {
+            validateInput(input1)
+        }
+        assertThrows<IllegalArgumentException> {
+            validateInput(input2)
+        }
+    }
+
     private fun getNumber():MutableList<Int>{
-        var randomNumber = mutableListOf<Int>()
+        var randomNumber = listOf<Int>()
         randomNumber = (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).shuffled().take(MAX_GAME_SIZE).distinct().toMutableList()
 
         if (randomNumber[FIRST_DIGIT_NUMBER] == 0) return getNumber()
         return randomNumber
+    }
+    private fun validateInput(input: Int): String{
+        if (input.toString().length != 3) {
+            throw IllegalArgumentException("입력값은 3자리여야 합니다.")
+        }
+        return input.toString()
     }
     companion object {
         private const val MAX_RANDOM_NUMBER = 9
