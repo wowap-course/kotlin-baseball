@@ -13,7 +13,7 @@ final class RefereeTest: XCTestCase {
         let number1 = [1,2,3]
         let number2 = [4,5,6]
         
-        let Referee = Referee(nothingJudgement: NothingJudgment(), ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
+        let Referee = Referee(ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
         XCTAssertEqual(Referee.gameResult(userNumber: number1, computerNumber: number2), [1,0,0])
     }
     
@@ -21,7 +21,7 @@ final class RefereeTest: XCTestCase {
         let number1 = [1,2,3]
         let number2 = [3,2,1]
         
-        let Referee = Referee(nothingJudgement: NothingJudgment(), ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
+        let Referee = Referee(ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
         XCTAssertEqual(Referee.gameResult(userNumber: number1, computerNumber: number2), [0,2,1])
     }
     
@@ -29,8 +29,8 @@ final class RefereeTest: XCTestCase {
         let number1 = [1,2,3]
         let number2 = [1,2,3]
         
-        let Referee = Referee(nothingJudgement: NothingJudgment(), ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
-        XCTAssertEqual(Referee.gameResult(userNumber: number1, computerNumber: number2), [0,0,3])
+        let Referee = Referee(ballJudgement: BallJudgment(), strikeJudgement: StrikeJudgment())
+        XCTAssertEqual(Referee.gameResult(userNumbers: number1, computerNumbers: number2), [0,0,3])
     }
 
 }
