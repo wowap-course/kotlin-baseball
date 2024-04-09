@@ -27,7 +27,7 @@
 
 
 < Test >
-- [ ] 모든 로직에 단위 테스트를 구현한다. 단, Controller, UI(System.out, System.in) 로직은 제외
+- [x] 모든 로직에 단위 테스트를 구현한다. 단, Controller, UI(System.out, System.in) 로직은 제외
 -  [x] -> private 함수는 구현하지 않는다.
 -  [x] Judgement -> 스트라이크 볼 낫싱 힌트 표시 
 -  [x] 컴퓨터는 서로 다른 3개의 수를 선택한다
