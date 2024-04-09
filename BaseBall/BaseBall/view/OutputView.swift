@@ -13,15 +13,20 @@ class OutputView{
     }
     
     func nowScorePrint(result: [Int]){
-        if result[0] > 0 && result[1] > 0 {
-            print("\(result[0])볼 \(result[1])스트라이크")
-        } else if result[0] > 0 {
-            print("\(result[0])볼")
-        } else if result[1] > 0 {
-            print("\(result[1])스트라이크")
-        } else {
+        if result[0] == 0 && result[1] == 0 {
             print("낫씽")
+            return
         }
+        
+        var output = ""
+        if result[0] > 0 {
+            output += "\(result[0])볼 "
+        }
+        if result[1] > 0 {
+            output += "\(result[1])스트라이크"
+        }
+            
+        print(output)
     }
     
     func resultGamePrint(){
