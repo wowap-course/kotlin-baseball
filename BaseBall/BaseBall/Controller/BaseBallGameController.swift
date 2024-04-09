@@ -13,8 +13,6 @@ import Foundation
 class BaseBallGameController{
     let inputView : InputView
     let outputView : OutputView
-    var restartJudge = true
-    
     init(inputView: InputView, outputView: OutputView) {
         self.inputView = inputView
         self.outputView = outputView
@@ -22,12 +20,14 @@ class BaseBallGameController{
     
     func run() {
         do {
-            while restartJudge == true {
-                try playOneGame(opponentNumbers: Opponent.init(numberGenerator: RandomNumberGenerator()).numbers)
-                restartJudge = try restart()
+            while true {
+                try playOneGame(opponentNumbers: [1,2,3])
+                guard try restart() else {
+                    outputView.endGamePrint()
+                    break
+                }
             }
             
-            outputView.endGamePrint()
         } catch {
             outputView.errorInputPrint()
         }
