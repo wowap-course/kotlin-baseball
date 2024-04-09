@@ -8,7 +8,7 @@ class Referee {
     private var score = Score(RESET_NUMBER, RESET_NUMBER)
 
 
-    fun call(computerNumbers: MutableList<Int>, playerNumbers: List<Int>): Pair<Int, Int> {
+    fun call(computerNumbers: List<Int>, playerNumbers: List<Int>): Pair<Int, Int> {
         for (i in computerNumbers.indices) {
             if (computerNumbers[i] == playerNumbers[i]) {
                 score.strike++
