@@ -17,7 +17,7 @@ class InputChecker {
     fun isWrongMoreOrStopCommand(command: Int?): Boolean {
         try {
             require(command != null) { "[ERROR] 입력은 정수형이여야 합니다." }
-            require(command == BaseballController.MORE_GAME_COMMAND || command == STOP_GAME_COMMAND) { "[ERROR] 입력은 1 또는 2여야 합니다." }
+            require(command == MORE_GAME_COMMAND || command == STOP_GAME_COMMAND) { "[ERROR] 입력은 1 또는 2여야 합니다." }
         } catch (e: IllegalArgumentException) {
             println(e.message)
             return true
@@ -28,5 +28,6 @@ class InputChecker {
     companion object {
         const val MAX_INPUT_LENGTH = 3
         const val STOP_GAME_COMMAND = 2
+        const val MORE_GAME_COMMAND = 1
     }
 }
