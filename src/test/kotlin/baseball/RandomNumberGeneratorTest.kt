@@ -6,14 +6,24 @@ import org.junit.jupiter.api.Test
 
 class RandomNumberGeneratorTest {
     @Test
-    fun `randomNumGenerate 랜덤 수 3개를 반환한다`() {
+    fun `랜덤 수 3개를 반환한다`() {
+        // given
+
+        // when
         val numbers = RandomNumberGenerator().generateNumber()
+
+        // then
         assertThat(numbers.size).isEqualTo(3)
     }
 
     @Test
-    fun `randomNumberGenerate 랜덤 수는 겹치지 않는 3개의 수이다`() {
+    fun `생성된 랜덤 수는 겹치지 않는 3개의 수이다`() {
+        // given
+
+        // when
         val numbers = RandomNumberGenerator().generateNumber().toSet()
+
+        // then
         assertThat(numbers.size).isEqualTo(3)
     }
 }
