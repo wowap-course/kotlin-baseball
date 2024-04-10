@@ -1,31 +1,55 @@
 package baseball
 
 import baseball.domain.InputChecker
-import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class InputCheckerTest {
     @Test
-    fun `isWrongNumberInput 입력이 4가지의 숫자일 때 true 반환`() {
+    fun `입력이 4가지의 숫자이라면 true 반환`() {
+        // given
         val input = 1234
-        assertThat(InputChecker().isWrongNumberInput(input)).isTrue()
+
+        // when
+        val result = InputChecker().isWrongNumberInput(input)
+
+        // then
+        assertTrue(result)
     }
 
     @Test
-    fun `isWrongNumberInput 입력이 2가지의 숫자일 때 true 반환`() {
+    fun `입력이 2가지의 숫자라면 true 반환`() {
+        // given
         val input = 12
-        assertThat(InputChecker().isWrongNumberInput(input)).isTrue()
+
+        // when
+        val result = InputChecker().isWrongNumberInput(input)
+
+        // then
+        assertTrue(result)
     }
 
     @Test
-    fun `isWrongNumberInput 입력에 겹치는 수가 있을 시 true 반환`() {
+    fun `중복된 숫자가 입력 될 때 true 반환`() {
+        // given
         val input = 122
-        assertThat(InputChecker().isWrongNumberInput(input)).isTrue()
+
+        // when
+        val result = InputChecker().isWrongNumberInput(input)
+
+        // then
+        assertTrue(result)
     }
 
     @Test
-    fun `isWrongMoreOrStopCommand 1이나 2 아닐 경우 true 반환`() {
+    fun `계속 할건지 물어볼 때 올바른 숫자가 아닐 경우 true 반환`() {
+        // given
         val input = 3
-        assertThat(InputChecker().isWrongNumberInput(input)).isTrue()
+
+        // when
+        val result = InputChecker().isWrongNumberInput(input)
+
+        // then
+        assertTrue(result)
     }
 }
