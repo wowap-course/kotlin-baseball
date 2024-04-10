@@ -6,20 +6,28 @@ import org.junit.jupiter.api.Test
 
 class JudgeTest {
     @Test
-    fun `calculateStrike 스트라이크 개수를 세어준다`() {
+    fun `두 수를 비교했을 때 같은 자리에 같은 숫자인 수가 하나라면 strike는 1이다`() {
+        // given
         val inputNumber = listOf(4, 5, 1)
         val randomNumber = listOf(7, 5, 4)
 
+        // when
         val result = Judge().calculateStrike(inputNumber, randomNumber)
+
+        // then
         assertThat(result).isEqualTo(1)
     }
 
     @Test
-    fun `calculateBall 볼 개수를 세어준다`() {
+    fun `두 수를 비교했을 때 다른 자리에 같은 숫자가 하나있다면 ball은 1이다`() {
+        // given
         val inputNumber = listOf(4, 5, 1)
         val randomNumber = listOf(7, 5, 4)
 
+        // when
         val result = Judge().calculateBall(inputNumber, randomNumber)
+
+        // then
         assertThat(result).isEqualTo(1)
     }
 }
