@@ -1,5 +1,7 @@
-package baseball.domain
+package baseball
 
+import baseball.domain.InputChecker
+import baseball.domain.Judge
 import baseball.domain.numbergenerator.RandomNumberGenerator
 import baseball.view.InputView
 import baseball.view.OutputView
