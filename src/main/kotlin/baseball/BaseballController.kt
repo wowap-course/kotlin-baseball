@@ -26,8 +26,8 @@ class BaseballController {
         var strike = INIT_NUMBER
         var ball = INIT_NUMBER
         while (strike != END_GAME_STRIKE_CONDITION) {
-            val input = inputView.inputNumber()
-            if (InputChecker().isWrongNumberInput(input)) continue
+            val input = inputView.inputGuessedNumber()
+            if (InputChecker().isWrongGuessedNumberInput(input)) continue
             val convertedInput = input.toString().map { it.toString().toInt() }
             strike = judge.calculateStrike(convertedInput, answer)
             ball = judge.calculateBall(convertedInput, answer)

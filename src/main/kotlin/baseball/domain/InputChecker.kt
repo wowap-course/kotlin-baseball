@@ -1,7 +1,7 @@
 package baseball.domain
 
 class InputChecker {
-    fun isWrongNumberInput(input: Int?): Boolean {
+    fun isWrongGuessedNumberInput(input: Int?): Boolean {
         try {
             require(input != null) { "[ERROR] 입력이 잘못되었습니다." }
             val convertedInput = input.toString().map { it.toString().toInt() }
