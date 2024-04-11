@@ -10,7 +10,7 @@ enum BallCountError: Error {
 
 import Foundation
 
-class UserBall{
+class UserBall : Ball{
     private(set) var numbers : [Int] = []
     init(numbers: [Int]) throws {
         self.numbers = numbers

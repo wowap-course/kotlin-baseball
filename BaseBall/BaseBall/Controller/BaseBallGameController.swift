@@ -21,7 +21,7 @@ class BaseBallGameController{
     func run() {
         do {
             while true {
-                try playOneGame(opponentNumbers: [1,2,3])
+                try playOneGame(opponentNumbers: OpponentBall(numberGenerator: RandomNumberGenerator()).numbers)
                 guard try restart() else {
                     outputView.endGamePrint()
                     break

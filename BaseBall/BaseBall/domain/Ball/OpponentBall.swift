@@ -7,8 +7,9 @@
 
 import Foundation
 
-class Opponent{
-    var numbers : [Int]
+class OpponentBall : Ball{
+    
+    private(set) var numbers : [Int]
     
     init(numberGenerator : NumberGenerator){
         self.numbers = numberGenerator.getNumbers()
