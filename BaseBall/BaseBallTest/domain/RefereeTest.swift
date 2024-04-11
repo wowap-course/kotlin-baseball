@@ -29,8 +29,8 @@ final class RefereeTest: XCTestCase {
         let number1 = [1,2,3]
         let number2 = [1,3,2]
         
-        let Referee = Referee()
-        XCTAssertEqual(Referee.gameResultCount(inputNumbers1: number1, inputNumbers2: number2), [2,1])
+        let gameResult = Referee().gameResultCount(inputNumbers1: number1, inputNumbers2: number2)
+        XCTAssertEqual([gameResult.ball, gameResult.strike], [2,1])
     }
 
 }

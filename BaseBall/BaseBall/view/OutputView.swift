@@ -12,18 +12,18 @@ class OutputView{
         print("숫자 야구를 시작합니다.")
     }
     
-    func nowScorePrint(result: [Int]){
-        if result[0] == 0 && result[1] == 0 {
+    func nowScorePrint(result: Score){
+        if result.ball == 0 && result.strike == 0 {
             print("낫씽")
             return
         }
         
         var output = ""
-        if result[0] > 0 {
-            output += "\(result[0])볼 "
+        if result.ball > 0 {
+            output += "\(result.ball)볼 "
         }
-        if result[1] > 0 {
-            output += "\(result[1])스트라이크"
+        if result.strike > 0 {
+            output += "\(result.strike )스트라이크"
         }
             
         print(output)

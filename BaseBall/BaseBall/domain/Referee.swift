@@ -9,8 +9,8 @@ import Foundation
 
 class Referee{
     
-    func gameResultCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> [Int] {
-        return [ballCount(inputNumbers1: inputNumbers1, inputNumbers2: inputNumbers2), strikeCount(inputNumbers1: inputNumbers1, inputNumbers2: inputNumbers2)]
+    func gameResultCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> Score{
+        return Score(ball: ballCount(inputNumbers1: inputNumbers1, inputNumbers2: inputNumbers2), strike: strikeCount(inputNumbers1: inputNumbers1, inputNumbers2: inputNumbers2))
     }
     
     func ballCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> Int {
