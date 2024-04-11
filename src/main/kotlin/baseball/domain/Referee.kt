@@ -1,6 +1,6 @@
 package baseball.domain
 
-data class Count(
+data class Referee(
     val strikeCount:Int,
     val ballCount:Int,
 )

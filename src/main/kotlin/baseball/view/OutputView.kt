@@ -1,14 +1,14 @@
 package baseball.view
 
 import baseball.GameController
-import baseball.domain.Count
+import baseball.domain.Referee
 
 class OutputView {
     fun gameStart() {
         println("숫자 야구 게임을 시작합니다.")
     }
 
-    fun result(resultCount: Count) {
+    fun result(resultCount: Referee) {
         val strikeCount = resultCount.strikeCount
         val ballCount = resultCount.ballCount
         println("S : ${strikeCount}, B : ${ballCount}")

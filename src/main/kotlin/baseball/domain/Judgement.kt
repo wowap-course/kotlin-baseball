@@ -2,11 +2,11 @@ package baseball.domain
 
 class Judgement() {
 
-    fun correctCount(answerNumbers: List<Int>, targetNumbers: List<Int>): Count {
+    fun correctCount(answerNumbers: List<Int>, targetNumbers: List<Int>): Referee {
         val strikeCount = getStrikeCount(answerNumbers, targetNumbers)
         val ballCount = getBallCount(answerNumbers, targetNumbers) - strikeCount
 
-        return Count(strikeCount,ballCount)
+        return Referee(strikeCount,ballCount)
     }
 
     private fun getStrikeCount(answerNumbers: List<Int>, targetNumbers: List<Int>): Int {

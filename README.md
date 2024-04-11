@@ -37,4 +37,5 @@
 
 < Code Review >
 - [x] GameController의 CheckInt를 InputView의 책임으로 봐도 된다.
-- [ ]
+- [x] Count라는 클래스의 이름이 너무 범용적이다 -> 무슨 역할을 하는 지 알기 쉽게 이름을 바꿔보자 
+  - Count -> Referee
