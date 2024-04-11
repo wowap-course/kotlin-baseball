@@ -58,11 +58,12 @@ class BaseBallGameController{
         if number != RESTART_NUM1 && number != RESTART_NUM2{
             throw RestartError.IllegalArgumentException
         } else {
-            return number == 1
+            return number == RESTART_NUMBER
         }
     }
     
     private let RESTART_NUM1 = 1
     private let RESTART_NUM2 = 2
+    private let RESTART_NUMBER = 1
     
 }
