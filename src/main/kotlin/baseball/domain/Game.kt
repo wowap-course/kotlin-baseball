@@ -12,5 +12,4 @@ class Game{
         val count = Judgement().correctCount(randomBaseballNumber,numList)
         return count
     }
-
 }

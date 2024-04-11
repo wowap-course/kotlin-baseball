@@ -34,3 +34,7 @@
 -  [x] Judgement -> 스트라이크 볼 낫싱 힌트 표시 
 -  [x] 컴퓨터는 서로 다른 3개의 수를 선택한다
 -  [x] 사용자가 입력하는 수는 3자리수여야 한다
+
+< Code Review >
+- [x] GameController의 CheckInt를 InputView의 책임으로 봐도 된다.
+- [ ]

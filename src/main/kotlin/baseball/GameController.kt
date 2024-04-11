@@ -14,23 +14,11 @@ class GameController(
         val randomNumberGenerator = RandomNumberGenerator()
         val randomBaseballNumber: List<Int> = randomNumberGenerator.getNumber()
         while(true) {
-            val resultCount= Game().start(randomBaseballNumber, checkInt())
+            val inputBaseballNumber = inputView.inputBaseBallNumber()
+            val resultCount= Game().start(randomBaseballNumber,inputBaseballNumber)
             outputView.result(resultCount)
         }
     }
-
-    fun checkInt():Int{
-        try {
-            val baseballNumber = inputView.inputBaseBallNumber()
-            require(baseballNumber is Int)
-            require(baseballNumber in GameController.MIN_BASEBALL_NUMBER..GameController.MAX_BASEBALL_NUMBER)
-            return baseballNumber
-        } catch (e: IllegalArgumentException) {
-            return checkInt()
-        }
-
-    }
-
     fun gameRestart(){
         val restartChoice = inputView.inputGameRestart()
         when(restartChoice){
@@ -39,8 +27,5 @@ class GameController(
         }
     }
 
-    companion object{
-        private const val MIN_BASEBALL_NUMBER = 100
-        private const val MAX_BASEBALL_NUMBER = 999
-    }
+
 }
