@@ -1,27 +1,18 @@
 package baseball.domain.numbergenerator
 
-import baseball.domain.DigitsRule
-import baseball.domain.Referee
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 
 class RandomNumberGeneratorTest {
-    inner class FakeNumberGenerator : NumberGenerator {
-        override fun generateNumber(): List<Int> {
-            return listOf(1, 1, 1)
-        }
-    }
     @Test
-    fun `숫자는 정해진 자릿수가 있다`() {
-        val referee = Referee(RandomNumberGenerator(), DigitsRule(3))
-        val number = referee.makeNumber()
-        assertThat(number.length).isEqualTo(3)
+    fun `세 자리 숫자를 생성한다`() {
+        val numbers = RandomNumberGenerator().generateNumber()
+        assertThat(numbers.size == 3)
     }
 
     @Test
-    fun `각각의 숫자는 서로 다르다`() {
-        val referee = Referee(FakeNumberGenerator(), DigitsRule(3))
-        assertThrows<IllegalArgumentException> { referee.makeNumber() }
+    fun `생성된 숫자엔 중복된 수가 없다`() {
+        val numbers = RandomNumberGenerator().generateNumber()
+        assertThat(numbers.toSet().size == numbers.size)
     }
 }

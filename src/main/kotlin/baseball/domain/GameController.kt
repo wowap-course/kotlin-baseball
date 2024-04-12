@@ -12,12 +12,12 @@ class GameController(
         outputView.printGameStart()
     }
     fun run(){
-        val referee = Referee(RandomNumberGenerator(), DigitsRule(3))
-        val opponent = Opponent(referee)
+        val referee = Referee()
+        val opponentNumber = RandomNumberGenerator().generateNumber()
 
         do {
             val answer = inputView.readAnswer()
-            val result = referee.refereeNumber(opponent, answer)
+            val result = referee.refereeNumber(answer)
             outputView.printResultOfInning(result)
         } while (result != "3스트라이크")
 
