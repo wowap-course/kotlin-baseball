@@ -3,7 +3,15 @@ package baseball.view
 import baseball.domain.BaseballScore
 
 class OutputView {
-    fun printStrikeOnly(baseballScore: BaseballScore) {
+    fun printBaseballStart() {
+        println("숫자 야구 게임을 시작합니다.")
+    }
+
+    fun printError(message: String) {
+        println("[ERROR]: $message")
+    }
+
+    fun printBaseballScore(baseballScore: BaseballScore) {
         when {
             baseballScore.strike == 0 && baseballScore.ball == 0 -> println("낫싱")
             baseballScore.strike == 0 && baseballScore.ball > 0 -> println("${baseballScore.ball}볼")
