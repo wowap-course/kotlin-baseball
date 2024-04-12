@@ -5,7 +5,6 @@ import baseball.domain.Referee
 import baseball.domain.numbergenerator.RandomNumberGenerator
 import baseball.view.InputView
 import baseball.view.OutputView
-import java.sql.Ref
 
 class GameController(
     private val inputView: InputView,
@@ -14,7 +13,7 @@ class GameController(
     fun run() {
         outputView.gameStart()
         val randomNumberGenerator = RandomNumberGenerator()
-        val randomBaseballNumber: List<Int> = randomNumberGenerator.getNumber()
+        val randomBaseballNumber: List<Int> = randomNumberGenerator.getNumbers()
         while(true) {
             val inputBaseballNumber = inputView.inputBaseBallNumber()
             val resultCount= Game().start(randomBaseballNumber,inputBaseballNumber)

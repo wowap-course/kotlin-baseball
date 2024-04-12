@@ -1,10 +1,8 @@
 package baseball.domain.numbergenerator
 
 class RandomNumberGenerator : NumberGenerator {
-    override fun getNumbers(): MutableList<Int> {
-        var randomNumber = mutableListOf<Int>()
-        randomNumber = (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).shuffled().take(MAX_GAME_SIZE).distinct().toMutableList()
-        return randomNumber
+    override fun getNumbers(): List<Int> {
+        return (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).shuffled().take(MAX_GAME_SIZE)
     }
 
     companion object {
