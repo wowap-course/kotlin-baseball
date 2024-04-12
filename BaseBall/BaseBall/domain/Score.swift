@@ -8,8 +8,8 @@
 import Foundation
 
 struct Score {
-    var strike : Int
-    var ball : Int
+    let strike : Int
+    let ball : Int
     
     init(ball: Int, strike: Int) {
         self.strike = strike

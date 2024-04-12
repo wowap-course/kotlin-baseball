@@ -48,9 +48,9 @@ class BaseBallGameController{
     private func playOneRound(userNumbers: [Int], opponentNumbers: [Int]){
         let referee = Referee()
         
-        let result = referee.getGameScore(baseNumbers: userNumbers, targetNumbers:opponentNumbers)
+        let resultScore = referee.getGameScore(baseNumbers: userNumbers, targetNumbers:opponentNumbers)
         
-        outputView.nowScorePrint(result: result)
+        outputView.nowScorePrint(ball: resultScore.ball, strike: resultScore.strike)
     }
     
     private func restart() throws -> Bool{
