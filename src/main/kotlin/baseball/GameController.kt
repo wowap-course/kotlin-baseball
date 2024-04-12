@@ -1,14 +1,14 @@
 package baseball
 
 import baseball.domain.computer.Referee
-import baseball.domain.numberRules.SelectNumber
+import baseball.domain.numberRules.UserInputNumbers
 import baseball.domain.numberRules.ThreeRandomNumberGenerator
 import baseball.view.InputView
 import baseball.view.OutputView
 
 class GameController {
     private val gameSetup = ThreeRandomNumberGenerator()
-    private val seletNumber = SelectNumber()
+    private val seletNumber = UserInputNumbers()
     private val outputview = OutputView()
     private val inputview = InputView()
     private val referee = Referee()
@@ -18,7 +18,7 @@ class GameController {
         val computer = gameSetup.generateRandomNumber()
 
         while (!referee.isThreeStrike()) {
-            val input = inputview.printInputNumber()
+            val input = inputview.getInputNumbers()
             val player = seletNumber.selectNumber(input)
 
             playHandler(computer, player)
