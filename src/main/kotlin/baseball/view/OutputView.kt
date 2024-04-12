@@ -12,12 +12,11 @@ class OutputView {
             else -> "${ball}볼 ${strike}스트라이크"
         }
         println(result)
-
     }
     fun printResultOfBaseBall(){
         println("3개의 숫자를 모두 맞히셨습니다! 게임 종료")
     }
     companion object {
-        private val ZERO_POINT = 0
+        private const val ZERO_POINT = 0
     }
 }

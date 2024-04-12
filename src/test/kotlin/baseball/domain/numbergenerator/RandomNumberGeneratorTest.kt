@@ -8,8 +8,8 @@ import org.junit.jupiter.api.assertThrows
 
 class RandomNumberGeneratorTest {
     inner class FakeNumberGenerator : NumberGenerator {
-        override fun get(): String {
-            return "111"
+        override fun generateNumber(): List<Int> {
+            return listOf(1, 1, 1)
         }
     }
     @Test
