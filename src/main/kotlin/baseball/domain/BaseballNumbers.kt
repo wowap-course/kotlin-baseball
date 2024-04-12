@@ -8,8 +8,10 @@ class BaseballNumbers(numbers: Set<BaseballNumber>) {
         require(numbers.size == NUMBERS_SIZE) { ERROR_NOT_VALID_SIZE }
     }
 
+    operator fun get(index: Int) = _numbers.toList()[index]
+
     companion object {
-        private const val NUMBERS_SIZE = 3
+        const val NUMBERS_SIZE = 3
         private const val ERROR_DUPLICATE = "숫자야구 숫자는 중복될 수 없습니다"
         private const val ERROR_NOT_VALID_SIZE = "숫자야구의 숫자 개수는 3개입니다"
 
