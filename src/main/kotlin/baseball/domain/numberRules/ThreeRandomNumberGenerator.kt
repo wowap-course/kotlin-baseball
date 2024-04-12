@@ -8,8 +8,11 @@ class ThreeRandomNumberGenerator : ComputerGenerateNumberRule {
     override fun generateRandomNumber(): List<Int> {
         val randomNumbers = mutableListOf<Int>()
 
-        while (randomNumbers.distinct().size < MAX_COM_NUMBER_SIZE) {
-            randomNumbers.add((MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random())
+        while (randomNumbers.size < MAX_COM_NUMBER_SIZE) {
+            val randomNumber = (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random()
+            if (!randomNumbers.contains(randomNumber)) {
+                randomNumbers.add(randomNumber)
+            }
         }
 
         println(randomNumbers)
