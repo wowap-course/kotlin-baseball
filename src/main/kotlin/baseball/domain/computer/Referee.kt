@@ -5,7 +5,7 @@ import baseball.domain.computer.Computer.Companion.RESET_NUMBER
 import baseball.domain.computer.Computer.Companion.THREE_STRIKE
 
 class Referee {
-    private var score = Score(RESET_NUMBER, RESET_NUMBER)
+    private val score = Score(RESET_NUMBER, RESET_NUMBER)
 
 
     fun call(computerNumbers: List<Int>, playerNumbers: List<Int>): Pair<Int, Int> {
