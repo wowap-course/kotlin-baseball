@@ -13,7 +13,7 @@ class Referee(
         require(number.toSet().size == number.length)
         return number
     }
-    fun refereeNumber(opponent : Opponent, answer : String) : String {
+    fun refereeNumber(opponent : Opponent, answer : String) : Pair<Int, Int> {
         val number = opponent.number
         var ball = 0
         var strike = 0
@@ -21,9 +21,6 @@ class Referee(
             if(c == number[index]) strike++
             else if(c in number) ball++
         }
-        if(ball == 0 && strike == 0) return "낫싱"
-        var result = if(ball != 0) "${ball}볼" else ""
-        if(strike != 0) result += " ${strike}스트라이크"
-        return result.trim()
+        return ball to strike
     }
 }
