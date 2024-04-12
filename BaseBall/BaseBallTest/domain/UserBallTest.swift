@@ -10,8 +10,14 @@ import XCTest
 final class UserBallTest: XCTestCase {
 
     func test_숫자를_받아서_확인할_수_있다() throws{
-        let testBall = try UserBall(numbers: [3,2,4])
-        XCTAssertEqual(testBall.numbers, [3,2,4])
+        // Given
+        let UserBall = try UserBall(numbers: [3,2,4])
+        
+        // When
+        let testBallNumber = UserBall.numbers
+        
+        // Then
+        XCTAssertEqual(testBallNumber, [3,2,4])
     }
   
     func test_3자리의_수가_들어와야_한다() throws {
@@ -23,7 +29,7 @@ final class UserBallTest: XCTestCase {
     }
     
     func test_숫자는_0은_불가능하다() throws {
-        XCTAssertThrowsError(try UserBall(numbers: [3,3,0]))
+        XCTAssertThrowsError(try UserBall(numbers: [3,2,0]))
     }
 
 }
