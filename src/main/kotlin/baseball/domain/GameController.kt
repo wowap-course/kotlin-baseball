@@ -12,14 +12,20 @@ class GameController(
         outputView.printGameStart()
     }
     fun run(){
-        val referee = Referee()
+        val judgement = Judgement()
         val opponentNumber = RandomNumberGenerator().generateNumber()
+        var startOrQuit = 1
 
-        do {
+        while(startOrQuit == 1) {
             val answer = inputView.readAnswer()
-            val result = referee.refereeNumber(answer)
-            outputView.printResultOfInning(result)
-        } while (result != "3스트라이크")
+            ValidInput() //으로 검사
+            val validAnswer = answer.toList().map { it.toString().toInt() }
+            //judgement로 검사
+            val (ball, strike) = Judgement().judgeNumber(opponentNumber, validAnswer)
+            //judgement가 판단한 값을 output에 넘김
+            outputView.printResultOfInning(ball, strike)
+            //한 라운드 종료
+        }
 
         outputView.printResultOfBaseBall()
         restartOrQuit()
