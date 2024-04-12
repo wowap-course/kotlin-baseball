@@ -11,7 +11,7 @@ class BaseballTest {
     fun `심판은 스트라이크와 볼을 판단한다`() {
         // given
         val referee = Referee()
-        val computerNumbers = mutableListOf(1,2,3)
+        val computerNumbers = listOf(1,2,3)
         val yourNumber = listOf(2,3,4)
 
         // when
