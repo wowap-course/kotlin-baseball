@@ -8,14 +8,14 @@ class OutputView {
         println("숫자 야구 게임을 시작합니다.")
     }
 
-    fun result(resultCount: Referee) {
+    fun countOutput(resultCount: Referee) {
         val strikeCount = resultCount.strikeCount
         val ballCount = resultCount.ballCount
         println("S : ${strikeCount}, B : ${ballCount}")
-        if (strikeCount == 3) {
-            println("3개의 숫자를 모두 맞히셨습니다!")
-            GameController(InputView(), OutputView()).gameRestart()
-        }
+    }
+
+    fun winOutput(){
+        println("3개의 숫자를 모두 맞히셨습니다!")
     }
 
     fun gameStop():Int {

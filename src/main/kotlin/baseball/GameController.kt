@@ -1,9 +1,11 @@
 package baseball
 
 import baseball.domain.Game
+import baseball.domain.Referee
 import baseball.domain.numbergenerator.RandomNumberGenerator
 import baseball.view.InputView
 import baseball.view.OutputView
+import java.sql.Ref
 
 class GameController(
     private val inputView: InputView,
@@ -16,7 +18,16 @@ class GameController(
         while(true) {
             val inputBaseballNumber = inputView.inputBaseBallNumber()
             val resultCount= Game().start(randomBaseballNumber,inputBaseballNumber)
-            outputView.result(resultCount)
+            outputView.countOutput(resultCount)
+            gameEnd(resultCount)
+        }
+
+    }
+    fun gameEnd(resultCount:Referee){
+        val strikeCount = resultCount.strikeCount
+        if(strikeCount == 3) {
+            outputView.winOutput()
+            gameRestart()
         }
     }
     fun gameRestart(){
@@ -26,6 +37,5 @@ class GameController(
             2 -> outputView.gameStop()
         }
     }
-
 
 }

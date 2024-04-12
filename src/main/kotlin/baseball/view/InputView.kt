@@ -5,19 +5,19 @@ import baseball.GameController
 class InputView {
     fun inputBaseBallNumber(): Int {
         print("숫자를 입력해주세요 : ")
-        var inputBaseBallNumber = checkInt()
-        return inputBaseBallNumber
+        val baseballNumber = readln().toIntOrNull()
+        return checkInt(baseballNumber)
     }
-    fun checkInt():Int{
+    fun checkInt(baseballNumber:Int?):Int{
         try {
-            val baseballNumber = readln().toIntOrNull()
             require(baseballNumber is Int)
             require(baseballNumber in MIN_BASEBALL_NUMBER..MAX_BASEBALL_NUMBER)
+            val baseballNumber = baseballNumber.toInt()
             return baseballNumber
         } catch (e: IllegalArgumentException) {
-            return checkInt()
+            println("숫자 3글자를 입력해주세요")
+            return inputBaseBallNumber()
         }
-
     }
 
 
