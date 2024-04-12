@@ -1,4 +1,4 @@
-package baseball.numbergenerator
+package baseball.domain.numbergenerator
 
 class UniqueRandomNumbersGenerator(
     private val numbers: List<Int>,
