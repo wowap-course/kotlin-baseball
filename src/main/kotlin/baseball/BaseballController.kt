@@ -1,7 +1,6 @@
 package baseball
 
 import baseball.domain.BaseballNumbers
-import baseball.domain.BaseballScore
 import baseball.domain.Judgment
 import baseball.domain.numbergenerator.UniqueRandomNumbersGenerator
 import baseball.view.InputView
@@ -31,7 +30,7 @@ class BaseballController(private val inputView: InputView, private val outputVie
     private fun guessComputerNumbers(computerNumbers: BaseballNumbers): Boolean {
         val baseballScore = judgment.judgeScore(computerNumbers, getPlayerNumbers())
         outputView.printBaseballScore(baseballScore)
-        if (baseballScore == BaseballScore(3, 0)) {
+        if (baseballScore.isCorrect()) {
             outputView.printEndBaseballPlay()
             return true
         }
