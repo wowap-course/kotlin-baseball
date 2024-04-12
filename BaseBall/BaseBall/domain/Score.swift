@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Score {
+struct Score : Equatable{
     let strike : Int
     let ball : Int
     

@@ -11,13 +11,13 @@ final class UserBallTest: XCTestCase {
 
     func test_숫자를_받아서_확인할_수_있다() throws{
         // Given
-        let UserBall = try UserBall(numbers: [3,2,4])
+        let UserNumbers = [3,2,4]
         
-        // When
-        let testBallNumber = UserBall.numbers
+        // Given
+        let UserBall = try UserBall(numbers: UserNumbers).numbers
         
         // Then
-        XCTAssertEqual(testBallNumber, [3,2,4])
+        XCTAssertEqual(UserBall, [3,2,4])
     }
   
     func test_3자리의_수가_들어와야_한다() throws {

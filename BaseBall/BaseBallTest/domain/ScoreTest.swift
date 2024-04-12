@@ -9,15 +9,16 @@ import XCTest
 
 final class ScoreTest: XCTestCase {
 
-    func test_점수는_올바른_스트라이크와_볼의_데이터를_가진다(){
+    func test_점수는_입력한_스트라이크와_볼의_데이터를_가진다(){
         // Given
-        let test = Score(ball: 2, strike: 1)
+        let ball = 2
+        let strike = 1
         
         // When
-        let actual = [test.ball, test.strike]
-        
+        let actual = Score(ball: ball, strike: strike)
+                
         // Then
-        XCTAssertEqual(actual, [2,1])
+        XCTAssertEqual(actual, Score(ball: 2, strike: 1))
     }
 
 }

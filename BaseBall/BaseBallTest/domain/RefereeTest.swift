@@ -13,39 +13,36 @@ final class RefereeTest: XCTestCase {
         // Given
         let number1 = [1,2,3]
         let number2 = [3,4,5]
-        let gameResult = Referee().getGameScore(baseNumbers: number1, targetNumbers: number2)
         
         // When
-        let actual = [gameResult.ball, gameResult.strike]
+        let actual = Referee().getGameScore(baseNumbers: number1, targetNumbers: number2)
         
         // Then
-        XCTAssertEqual(actual, [1,0])
+        XCTAssertEqual(actual, Score(ball: 1, strike: 0))
     }
     
     func test_스트라이크를_출력한다(){
         // Given
         let number1 = [1,2,3]
         let number2 = [1,2,5]
-        let gameResult = Referee().getGameScore(baseNumbers: number1, targetNumbers: number2)
         
         // When
-        let actual = [gameResult.ball, gameResult.strike]
+        let actual = Referee().getGameScore(baseNumbers: number1, targetNumbers: number2)
         
         // Then
-        XCTAssertEqual(actual, [0,2])
+        XCTAssertEqual(actual, Score(ball: 0, strike: 2))
     }
     
     func test_올바른_경기_결과를_출력한다(){
         // Given
         let number1 = [1,2,3]
         let number2 = [1,3,2]
-        let gameResult = Referee().getGameScore(baseNumbers: number1, targetNumbers: number2)
         
         // When
-        let actual = [gameResult.ball, gameResult.strike]
+        let actual = Referee().getGameScore(baseNumbers: number1, targetNumbers: number2)
         
         // Then
-        XCTAssertEqual(actual, [2,1])
+        XCTAssertEqual(actual, Score(ball: 2, strike: 1))
     }
 
 }
