@@ -9,11 +9,9 @@ import Foundation
 
 class RandomNumberGenerator : NumberGenerator{
     
-    lazy var nums = Array(MIN_RANDOM_NUM...MAX_RANDOM_NUM)
-    
     func getNumbers() -> [Int] {
-        nums.shuffle()
-        return Array(nums.prefix(RANDOM_NUM_LENGTH))
+        let nums = Array(MIN_RANDOM_NUM...MAX_RANDOM_NUM)
+        return Array(nums.shuffled().prefix(RANDOM_NUM_LENGTH))
     }
     
     private let MIN_RANDOM_NUM = 1
