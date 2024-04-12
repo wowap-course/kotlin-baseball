@@ -31,7 +31,7 @@ class BaseBallGameController{
         }
     }
     
-    func playOneGame(opponentNumbers: [Int]) throws{
+    private func playOneGame(opponentNumbers: [Int]) throws{
         do {
             var userNumbers = try UserBall(numbers: inputView.inputNumber()).numbers
             while !userNumbers.elementsEqual(opponentNumbers){
@@ -45,16 +45,16 @@ class BaseBallGameController{
         outputView.resultGamePrint()
     }
     
-    func playOneRound(userNumbers: [Int], opponentNumbers: [Int]){
+    private func playOneRound(userNumbers: [Int], opponentNumbers: [Int]){
         let referee = Referee()
         
-        let result = referee.gameResultCount(inputNumbers1: userNumbers, inputNumbers2:opponentNumbers)
+        let result = referee.getGameScore(baseNumbers: userNumbers, targetNumbers:opponentNumbers)
         
         outputView.nowScorePrint(result: result)
     }
     
-    func restart() throws -> Bool{
-        let number = inputView.restart()
+    private func restart() throws -> Bool{
+        let number = inputView.inputRestart()
         if number != RESTART_NUM1 && number != RESTART_NUM2{
             throw RestartError.IllegalArgumentException
         } else {

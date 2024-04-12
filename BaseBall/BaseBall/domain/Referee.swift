@@ -9,17 +9,17 @@ import Foundation
 
 class Referee{
     
-    func gameResultCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> Score{
-        return Score(ball: ballCount(inputNumbers1: inputNumbers1, inputNumbers2: inputNumbers2), strike: strikeCount(inputNumbers1: inputNumbers1, inputNumbers2: inputNumbers2))
+    func getGameScore(baseNumbers: [Int], targetNumbers: [Int]) -> Score{
+        return Score(ball: getBallCount(baseNumbers: baseNumbers, targetNumbers: targetNumbers), strike: getStrikeCount(baseNumbers: baseNumbers, targetNumbers: targetNumbers))
     }
     
-    func ballCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> Int {
-        return inputNumbers1.filter { num in
-            inputNumbers2.contains(num) && num != inputNumbers2[inputNumbers1.firstIndex(of: num)!]
+    private func getBallCount(baseNumbers: [Int], targetNumbers: [Int]) -> Int {
+        return baseNumbers.filter { num in
+            targetNumbers.contains(num) && num != targetNumbers[baseNumbers.firstIndex(of: num)!]
         }.count
     }
     
-    func strikeCount(inputNumbers1: [Int], inputNumbers2: [Int]) -> Int {
-        return inputNumbers1.enumerated().filter { $0.element == inputNumbers2[$0.offset] }.count
+    private func getStrikeCount(baseNumbers: [Int], targetNumbers: [Int]) -> Int {
+        return baseNumbers.enumerated().filter { $0.element == targetNumbers[$0.offset] }.count
     }
 }

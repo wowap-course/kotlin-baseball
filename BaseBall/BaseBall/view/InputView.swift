@@ -13,7 +13,7 @@ class InputView {
         return readLine()!.compactMap { Int(String($0))}
     }
     
-    func restart() -> Int {
+    func inputRestart() -> Int {
         print("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.")
         return Int(readLine()!)!
     }
