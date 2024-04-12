@@ -1,6 +1,6 @@
 package baseball.domain
 
-class Validation {
+class ValidInput {
     fun isNumber(inputNumber : String) {
         require(inputNumber.toIntOrNull() != null) {"[ERROR]: 입력된 값은 숫자가 아닙니다."}
     }
