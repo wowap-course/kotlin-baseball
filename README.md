@@ -40,7 +40,8 @@
 - [x] Count라는 클래스의 이름이 너무 범용적이다 -> 무슨 역할을 하는 지 알기 쉽게 이름을 바꿔보자 
   - Count -> Referee
 - [x] 변수명에 컬렉션이 포함되면 안된다. 
-- [ ] GameTest에는 Game을 테스트 해야하며 로직이 존재하면 안된다.
+- [x] GameTest에는 Game을 테스트 해야하며 로직이 존재하면 안된다.
+- [x] Test : start함수는 count를 리턴받는가?
 - [x] GameController -> View -> GameController 수정 // 순환참조가 발생한다.
 - [x] "게임에서 승리했다", "Strike : 3"이 View의 로직인가? // 비즈니스 로직과 뷰로직 분리 
 - [x] 리스트는 복수형 변수를 사용해야 한다.
