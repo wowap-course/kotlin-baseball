@@ -10,6 +10,9 @@ class GameController(
 ) {
     fun start(){
         outputView.printGameStart()
+        while(){ //startOrQuit 이 Quit 될 때까지
+            run()
+        }
     }
     fun run(){
         val judgement = Judgement()
@@ -17,22 +20,26 @@ class GameController(
         var startOrQuit = 1
 
         while(startOrQuit == 1) {
-            val answer = inputView.readAnswer()
-            ValidInput() //으로 검사
-            val validAnswer = answer.toList().map { it.toString().toInt() }
-            //judgement로 검사
+            var answer = getAnswer()
+            while(answer == null) answer = getAnswer()
+            val validAnswer = validate(answer)
             val (ball, strike) = Judgement().judgeNumber(opponentNumber, validAnswer)
-            //judgement가 판단한 값을 output에 넘김
             outputView.printResultOfInning(ball, strike)
-            //한 라운드 종료
         }
 
         outputView.printResultOfBaseBall()
-        restartOrQuit()
     }
-    fun restartOrQuit(){
-        val startOrQuit = inputView.readStartOrQuit()
-        if(startOrQuit == 1) run()
-        else if(startOrQuit == 2) return
+    private fun getAnswer() : String? {
+        val answer = inputView.readAnswer()
+        val validInput = ValidInput()
+        return runCatching {
+            validInput.isNumber(answer)
+            validInput.isThreeDigits(answer)
+            validInput.isNoDuplicate(answer)
+            answer
+        }.onFailure { e ->
+            println(e.message)
+        }.getOrNull()
     }
+    private fun validate(answer : String) : List<Int> = answer.toList().map { it.toString().toInt() }
 }
