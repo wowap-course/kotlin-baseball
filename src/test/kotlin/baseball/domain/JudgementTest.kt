@@ -1,6 +1,5 @@
-package baseball.domain.judgement
+package baseball.domain
 
-import baseball.domain.Judgement
 import baseball.domain.numbergenerator.NumberGenerator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

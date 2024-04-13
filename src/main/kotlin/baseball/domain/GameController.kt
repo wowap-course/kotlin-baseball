@@ -10,23 +10,23 @@ class GameController(
 ) {
     fun start(){
         outputView.printGameStart()
-        while(){ //startOrQuit 이 Quit 될 때까지
+        var startOrQuit = START
+        while(startOrQuit == START){ //startOrQuit 이 Quit 될 때까지
             run()
+            startOrQuit = inputView.readStartOrQuit()
         }
     }
-    fun run(){
-        val judgement = Judgement()
+    private fun run(){
         val opponentNumber = RandomNumberGenerator().generateNumber()
-        var startOrQuit = 1
-
-        while(startOrQuit == 1) {
+        var endCondition = INIT_CONDITION
+        while(endCondition != END_CONDITION) {
             var answer = getAnswer()
             while(answer == null) answer = getAnswer()
             val validAnswer = validate(answer)
             val (ball, strike) = Judgement().judgeNumber(opponentNumber, validAnswer)
+            endCondition = strike
             outputView.printResultOfInning(ball, strike)
         }
-
         outputView.printResultOfBaseBall()
     }
     private fun getAnswer() : String? {
@@ -42,4 +42,9 @@ class GameController(
         }.getOrNull()
     }
     private fun validate(answer : String) : List<Int> = answer.toList().map { it.toString().toInt() }
+    companion object {
+        private const val START = 1
+        private const val INIT_CONDITION = 0
+        private const val END_CONDITION = 3
+    }
 }
