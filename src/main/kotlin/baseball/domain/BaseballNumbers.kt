@@ -1,14 +1,12 @@
 package baseball.domain
 
-class BaseballNumbers(numbers: Set<BaseballNumber>) {
-    private val _numbers: Set<BaseballNumber> = numbers.toSet()
-    val numbers get() = _numbers.toSet()
+class BaseballNumbers(val numbers: Set<BaseballNumber>) {
 
     init {
         require(numbers.size == NUMBERS_SIZE) { ERROR_NOT_VALID_SIZE }
     }
 
-    operator fun get(index: Int) = _numbers.toList()[index]
+    operator fun get(index: Int) = numbers.toList()[index]
 
     companion object {
         const val NUMBERS_SIZE = 3
