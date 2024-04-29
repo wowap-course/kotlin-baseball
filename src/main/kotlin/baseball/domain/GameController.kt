@@ -20,14 +20,18 @@ class GameController(
         val opponentNumber = RandomNumberGenerator().generateNumber()
         var endCondition = INIT_CONDITION
         while(endCondition != END_CONDITION) {
-            var answer = getAnswer()
-            while(answer == null) answer = getAnswer()
-            val validAnswer = validate(answer)
+            val validAnswer = getValidateAnswer()
             val (ball, strike) = Judgement().judgeNumber(opponentNumber, validAnswer)
             endCondition = strike
             outputView.printResultOfInning(ball, strike)
         }
         outputView.printResultOfBaseBall()
+    }
+    private fun getValidateAnswer() : List<Int> {
+        var answer = getAnswer()
+        while(answer == null) answer = getAnswer()
+        val validAnswer = validate(answer)
+        return validAnswer
     }
     private fun getAnswer() : String? {
         val answer = inputView.readAnswer()
