@@ -3,11 +3,10 @@ package baseball.domain.numbergenerator
 import baseball.domain.BaseballNumber
 
 class RandomNumberGenerator : NumberGenerator  {
-    override fun generateNumber(): List<BaseballNumber> {
-        val number = mutableSetOf<BaseballNumber>()
+    override fun generateNumber(): List<Int> {
+        val number = mutableSetOf<Int>()
         while(number.size < NUMBER_DIGITS) {
-            val randomNumber = (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random()
-            number.add(BaseballNumber(randomNumber))
+            number.add((MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random())
         }
         return number.toList()
     }
