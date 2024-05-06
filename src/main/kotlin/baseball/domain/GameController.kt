@@ -11,7 +11,7 @@ class GameController(
     fun start(){
         outputView.printGameStart()
         var startOrQuit = START
-        while(startOrQuit == START){ //startOrQuit 이 Quit 될 때까지
+        while(startOrQuit == START){
             run()
             startOrQuit = inputView.readStartOrQuit()
         }
