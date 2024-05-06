@@ -6,6 +6,10 @@ import org.junit.jupiter.api.assertThrows
 
 class BaseballNumbersTest() {
     @Test
+    fun `야구 숫자는 0을 가질 수 없다`() {
+        assertThrows<IllegalArgumentException> {BaseballNumbers(listOf(0, 2, 1))}
+    }
+    @Test
     fun `야구 숫자는 중복될 수 없다`() {
         assertThrows<IllegalArgumentException> {BaseballNumbers(listOf(1, 2, 1))}
     }
