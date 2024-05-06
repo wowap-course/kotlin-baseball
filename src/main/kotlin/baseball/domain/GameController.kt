@@ -20,12 +20,16 @@ class GameController(
         val opponentNumber = RandomNumberGenerator().generateNumber()
         var endCondition = INIT_CONDITION
         while(endCondition != END_CONDITION) {
-            val validAnswer = inputView.readAnswer()
+            val validAnswer = validate(inputView.readAnswer())
             val (ball, strike) = Judgement().judgeNumber(opponentNumber, validAnswer)
             endCondition = strike
             outputView.printResultOfInning(ball, strike)
         }
         outputView.printResultOfBaseBall()
+    }
+
+    private fun validate(answer : List<Int>) : List<BaseballNumber> {
+        return answer.map { BaseballNumber(it) }
     }
 
     companion object {
