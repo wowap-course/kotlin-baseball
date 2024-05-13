@@ -1,14 +1,14 @@
 package baseball
 
 import baseball.domain.Referee
-import baseball.domain.numberRules.UserInputNumbers
+import baseball.domain.numberRules.NumberExtractor
 import baseball.domain.numberRules.ThreeRandomNumberGenerator
 import baseball.view.InputView
 import baseball.view.OutputView
 
 class GameController {
     private val gameSetup = ThreeRandomNumberGenerator()
-    private val seletNumber = UserInputNumbers()
+    private val seletNumber = NumberExtractor()
     private val outputview = OutputView()
     private val inputview = InputView()
     private val referee = Referee()

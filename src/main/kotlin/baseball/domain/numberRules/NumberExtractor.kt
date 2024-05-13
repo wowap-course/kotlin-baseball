@@ -1,7 +1,7 @@
 package baseball.domain.numberRules
 
 
-class UserInputNumbers : PlayerSelectNumberRule {
+class NumberExtractor : PlayerSelectNumberRule {
     override fun selectNumber(input: String): List<Int> {
         val inputNumber = mutableListOf<Int>()
 
