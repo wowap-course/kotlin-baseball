@@ -18,8 +18,8 @@ class BaseballTest {
         val (strike, ball) = referee.call(computerNumbers, yourNumber)
 
         // then
-        assertThat(0).isEqualTo(strike)
-        assertThat(2).isEqualTo(ball)
+        assertThat(strike).isEqualTo(0)
+        assertThat(ball).isEqualTo(2)
 
     }
 }
