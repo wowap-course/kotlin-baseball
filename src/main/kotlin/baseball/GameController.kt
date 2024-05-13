@@ -15,7 +15,7 @@ class GameController {
 
     fun playGame() {
         outputview.printStartGame()
-        val computer = gameSetup.generateRandomNumber()
+        val computer = gameSetup.generateNumber()
 
         while (!referee.isThreeStrike()) {
             val input = inputview.getInputNumbers()

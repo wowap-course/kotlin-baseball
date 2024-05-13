@@ -1,5 +1,5 @@
 package baseball.domain.numberRules
 
 interface ComputerGenerateNumberRule {
-    fun generateRandomNumber(): List<Int>
+    fun generateNumber(): List<Int>
 }
