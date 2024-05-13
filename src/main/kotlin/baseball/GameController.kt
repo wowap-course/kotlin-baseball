@@ -1,6 +1,6 @@
 package baseball
 
-import baseball.domain.computer.Referee
+import baseball.domain.Referee
 import baseball.domain.numberRules.UserInputNumbers
 import baseball.domain.numberRules.ThreeRandomNumberGenerator
 import baseball.view.InputView

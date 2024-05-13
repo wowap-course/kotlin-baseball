@@ -1,8 +1,8 @@
 package baseball.domain.numberRules
 
-import baseball.domain.computer.Computer.Companion.MAX_COM_NUMBER_SIZE
-import baseball.domain.computer.Computer.Companion.MAX_RANDOM_NUMBER
-import baseball.domain.computer.Computer.Companion.MIN_RANDOM_NUMBER
+import baseball.domain.Referee.Companion.MAX_COM_NUMBER_SIZE
+import baseball.domain.Referee.Companion.MAX_RANDOM_NUMBER
+import baseball.domain.Referee.Companion.MIN_RANDOM_NUMBER
 
 class ThreeRandomNumberGenerator : ComputerGenerateNumberRule {
     override fun generateRandomNumber(): List<Int> {
