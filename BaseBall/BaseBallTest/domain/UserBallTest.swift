@@ -19,6 +19,17 @@ final class UserBallTest: XCTestCase {
         // Then
         XCTAssertEqual(UserBall, [3,2,4])
     }
+    
+    func test_숫자를_받아서_확인할_수_있다2() throws{
+        // Given
+        let UserNumbers = [3,2,9]
+        
+        // Given
+        let UserBall = try UserBall(numbers: UserNumbers).numbers
+        
+        // Then
+        XCTAssertEqual(UserBall, [3,2,9])
+    }
   
     func test_3자리의_수가_들어와야_한다() throws {
         // Given
@@ -44,4 +55,19 @@ final class UserBallTest: XCTestCase {
         XCTAssertThrowsError(try UserBall(numbers: numbers))
     }
 
+    func test_숫자는_1에서_9까지의_숫자만_가능하다() throws {
+        // Given
+        let numbers = [1233, 2, 0]
+        
+        // Then
+        XCTAssertThrowsError(try UserBall(numbers: numbers))
+    }
+    
+    func test_숫자는_1에서_9까지의_숫자만_가능하다2() throws {
+        // Given
+        let numbers = [1233, 2, 5]
+        
+        // Then
+        XCTAssertThrowsError(try UserBall(numbers: numbers))
+    }
 }

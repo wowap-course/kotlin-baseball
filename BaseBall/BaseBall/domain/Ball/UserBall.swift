@@ -27,10 +27,12 @@ class UserBall : Ball{
     }
     
     private func hasZeroNumber(numbers : [Int]) -> Bool{
-        return !numbers.contains(INCLUDE_ZERO)
+        let TargetNumber = Set(numbers)
+        let CorrectNumber = Set(CORRECT_NUMBER)
+        return TargetNumber.isSubset(of: CorrectNumber)
     }
     
     private let BALL_LENGTH = 3
-    private let INCLUDE_ZERO = 0
+    private let CORRECT_NUMBER = 1...9
     
 }
