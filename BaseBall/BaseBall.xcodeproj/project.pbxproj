@@ -7,8 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121A00462BBE4765000A9FDC /* OpponentBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00452BBE4765000A9FDC /* OpponentBall.swift */; };
+		121A00472BBE47A6000A9FDC /* OpponentBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00452BBE4765000A9FDC /* OpponentBall.swift */; };
+		121A00492BBE4843000A9FDC /* OpponentBallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00482BBE4843000A9FDC /* OpponentBallTest.swift */; };
+		121A004D2BBE48F2000A9FDC /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A004C2BBE48F2000A9FDC /* NumberGenerator.swift */; };
+		121A004F2BBE4926000A9FDC /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A004E2BBE4926000A9FDC /* RandomNumberGenerator.swift */; };
+		121A00502BBE4B2B000A9FDC /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A004C2BBE48F2000A9FDC /* NumberGenerator.swift */; };
+		121A00512BBE4B2B000A9FDC /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A004E2BBE4926000A9FDC /* RandomNumberGenerator.swift */; };
+		121A00542BBE51B6000A9FDC /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00532BBE51B6000A9FDC /* InputView.swift */; };
+		121A00582BC3DF5F000A9FDC /* UserBallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00572BC3DF5F000A9FDC /* UserBallTest.swift */; };
+		121A005A2BC3DFDB000A9FDC /* UserBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00592BC3DFDB000A9FDC /* UserBall.swift */; };
+		121A005B2BC3E055000A9FDC /* UserBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00592BC3DFDB000A9FDC /* UserBall.swift */; };
+		121A007B2BC4136A000A9FDC /* Referee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A007A2BC4136A000A9FDC /* Referee.swift */; };
+		121A007C2BC4136A000A9FDC /* Referee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A007A2BC4136A000A9FDC /* Referee.swift */; };
+		121A00812BC417F6000A9FDC /* RefereeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00802BC417F6000A9FDC /* RefereeTest.swift */; };
+		121A00832BC41953000A9FDC /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00822BC41953000A9FDC /* OutputView.swift */; };
+		121A00852BC41E90000A9FDC /* BaseBallGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121A00842BC41E90000A9FDC /* BaseBallGameController.swift */; };
+		1266197F2BC83A29008FC965 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1266197E2BC83A29008FC965 /* Score.swift */; };
+		126619802BC83E83008FC965 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1266197E2BC83A29008FC965 /* Score.swift */; };
+		126619822BC83F87008FC965 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126619812BC83F87008FC965 /* ScoreTest.swift */; };
+		126619842BC841CA008FC965 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126619832BC841CA008FC965 /* Ball.swift */; };
+		126619852BC841CA008FC965 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126619832BC841CA008FC965 /* Ball.swift */; };
 		12927E662BBE3C23008C5826 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12927E652BBE3C23008C5826 /* main.swift */; };
-		12927E732BBE3C34008C5826 /* BaseBallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12927E722BBE3C34008C5826 /* BaseBallTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +54,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		121A00452BBE4765000A9FDC /* OpponentBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentBall.swift; sourceTree = "<group>"; };
+		121A00482BBE4843000A9FDC /* OpponentBallTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentBallTest.swift; sourceTree = "<group>"; };
+		121A004C2BBE48F2000A9FDC /* NumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
+		121A004E2BBE4926000A9FDC /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
+		121A00532BBE51B6000A9FDC /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		121A00572BC3DF5F000A9FDC /* UserBallTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBallTest.swift; sourceTree = "<group>"; };
+		121A00592BC3DFDB000A9FDC /* UserBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBall.swift; sourceTree = "<group>"; };
+		121A007A2BC4136A000A9FDC /* Referee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Referee.swift; sourceTree = "<group>"; };
+		121A00802BC417F6000A9FDC /* RefereeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefereeTest.swift; sourceTree = "<group>"; };
+		121A00822BC41953000A9FDC /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
+		121A00842BC41E90000A9FDC /* BaseBallGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBallGameController.swift; sourceTree = "<group>"; };
+		1266197E2BC83A29008FC965 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		126619812BC83F87008FC965 /* ScoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
+		126619832BC841CA008FC965 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		12927E622BBE3C23008C5826 /* BaseBall */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaseBall; sourceTree = BUILT_PRODUCTS_DIR; };
 		12927E652BBE3C23008C5826 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		12927E702BBE3C34008C5826 /* BaseBallTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseBallTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		12927E722BBE3C34008C5826 /* BaseBallTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBallTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +91,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121A00442BBE4755000A9FDC /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				126619862BC8424F008FC965 /* Ball */,
+				121A004B2BBE48DD000A9FDC /* NumberGenerator */,
+				121A007A2BC4136A000A9FDC /* Referee.swift */,
+				1266197E2BC83A29008FC965 /* Score.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		121A004A2BBE4847000A9FDC /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				121A00482BBE4843000A9FDC /* OpponentBallTest.swift */,
+				121A00572BC3DF5F000A9FDC /* UserBallTest.swift */,
+				121A00802BC417F6000A9FDC /* RefereeTest.swift */,
+				126619812BC83F87008FC965 /* ScoreTest.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		121A004B2BBE48DD000A9FDC /* NumberGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				121A004C2BBE48F2000A9FDC /* NumberGenerator.swift */,
+				121A004E2BBE4926000A9FDC /* RandomNumberGenerator.swift */,
+			);
+			path = NumberGenerator;
+			sourceTree = "<group>";
+		};
+		121A00522BBE51A5000A9FDC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				121A00532BBE51B6000A9FDC /* InputView.swift */,
+				121A00822BC41953000A9FDC /* OutputView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		124BB53C2BC4E9D100C61BC9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				121A00842BC41E90000A9FDC /* BaseBallGameController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		126619862BC8424F008FC965 /* Ball */ = {
+			isa = PBXGroup;
+			children = (
+				121A00452BBE4765000A9FDC /* OpponentBall.swift */,
+				121A00592BC3DFDB000A9FDC /* UserBall.swift */,
+				126619832BC841CA008FC965 /* Ball.swift */,
+			);
+			path = Ball;
+			sourceTree = "<group>";
+		};
 		12927E592BBE3C23008C5826 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +170,9 @@
 		12927E642BBE3C23008C5826 /* BaseBall */ = {
 			isa = PBXGroup;
 			children = (
+				124BB53C2BC4E9D100C61BC9 /* Controller */,
+				121A00522BBE51A5000A9FDC /* view */,
+				121A00442BBE4755000A9FDC /* domain */,
 				12927E652BBE3C23008C5826 /* main.swift */,
 			);
 			path = BaseBall;
@@ -87,7 +181,7 @@
 		12927E712BBE3C34008C5826 /* BaseBallTest */ = {
 			isa = PBXGroup;
 			children = (
-				12927E722BBE3C34008C5826 /* BaseBallTest.swift */,
+				121A004A2BBE4847000A9FDC /* domain */,
 			);
 			path = BaseBallTest;
 			sourceTree = "<group>";
@@ -182,7 +276,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121A005A2BC3DFDB000A9FDC /* UserBall.swift in Sources */,
+				121A00462BBE4765000A9FDC /* OpponentBall.swift in Sources */,
+				121A007B2BC4136A000A9FDC /* Referee.swift in Sources */,
+				121A00852BC41E90000A9FDC /* BaseBallGameController.swift in Sources */,
+				121A004D2BBE48F2000A9FDC /* NumberGenerator.swift in Sources */,
+				1266197F2BC83A29008FC965 /* Score.swift in Sources */,
+				121A00542BBE51B6000A9FDC /* InputView.swift in Sources */,
 				12927E662BBE3C23008C5826 /* main.swift in Sources */,
+				121A004F2BBE4926000A9FDC /* RandomNumberGenerator.swift in Sources */,
+				126619842BC841CA008FC965 /* Ball.swift in Sources */,
+				121A00832BC41953000A9FDC /* OutputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +294,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12927E732BBE3C34008C5826 /* BaseBallTest.swift in Sources */,
+				126619822BC83F87008FC965 /* ScoreTest.swift in Sources */,
+				126619802BC83E83008FC965 /* Score.swift in Sources */,
+				121A005B2BC3E055000A9FDC /* UserBall.swift in Sources */,
+				121A00812BC417F6000A9FDC /* RefereeTest.swift in Sources */,
+				121A00502BBE4B2B000A9FDC /* NumberGenerator.swift in Sources */,
+				121A00582BC3DF5F000A9FDC /* UserBallTest.swift in Sources */,
+				121A00512BBE4B2B000A9FDC /* RandomNumberGenerator.swift in Sources */,
+				121A00492BBE4843000A9FDC /* OpponentBallTest.swift in Sources */,
+				121A007C2BC4136A000A9FDC /* Referee.swift in Sources */,
+				126619852BC841CA008FC965 /* Ball.swift in Sources */,
+				121A00472BBE47A6000A9FDC /* OpponentBall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

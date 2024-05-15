@@ -7,5 +7,4 @@
 
 import Foundation
 
-print("Hello, World!")
-
+BaseBallGameController(inputView: InputView(), outputView: OutputView()).run()
