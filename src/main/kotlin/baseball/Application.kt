@@ -1,5 +1,10 @@
-package racingcar
+package baseball
+
+import baseball.domain.GameController
+import baseball.view.InputView
+import baseball.view.OutputView
 
 fun main() {
-    // TODO: 프로그램 구현
+    val controller = GameController(InputView(), OutputView())
+    controller.start()
 }
